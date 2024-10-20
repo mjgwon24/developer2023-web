@@ -1,7 +1,6 @@
 {
-  "season1" : [
+  "season1": [
     {
-      "projectId": 1,
       "title": "이것도 막을수있을까?",
       "team": "GAME TEAM",
       "members": "박근태 외 4명",
@@ -9,11 +8,10 @@
       "like": 10,
       "view": 300,
       "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "웹",
-      "aword" : "2023 우수작"
+      "field": "웹",
+      "aword": "2023 우수작"
     },
     {
-      "projectId": 2,
       "title": "쉿, 나만의 메모장",
       "team": "APPLICATION TEAM",
       "members": "김원 외 3명",
@@ -21,11 +19,10 @@
       "like": 11,
       "view": 301,
       "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "앱",
-      "aword" : "2023 우수작"
+      "field": "웹",
+      "aword": "2023 우수작"
     },
     {
-      "projectId": 3,
       "title": "쇼핑몰",
       "team": "WEB TEAM",
       "members": "박찬엽 외 4명",
@@ -33,106 +30,62 @@
       "like": 12,
       "view": 311,
       "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "웹"
-    },
-    {
-      "projectId": 4,
-      "title": "예시타이틀",
-      "team": "팀명",
-      "members": "팀원이름 외 4명",
-      "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
-      "like": 15,
-      "view": 3,
-      "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "앱"
+      "field": "웹"
     }
   ],
-  "season2" : [
+  "season2": [
     {
-      "title": "이것도 막을수있을까?2",
-      "team": "GAME TEAM",
-      "members": "박근태 외 4명",
+      "title": "1등은 나야",
+      "team": "스터디히어로",
+      "members": "김이현 외 5명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
       "like": 10,
       "view": 300,
       "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "웹"
+      "field": "웹"
     },
     {
-      "title": "쉿, 나만의 메모장2",
-      "team": "APPLICATION TEAM",
-      "members": "김원 외 3명",
+      "title": "기숙사생은 여기로!",
+      "team": "금장 어때",
+      "members": "김주찬 외 3명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
       "like": 11,
       "view": 301,
       "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "앱"
+      "field": "웹"
     },
     {
-      "title": "쇼핑몰2",
-      "team": "WEB TEAM",
-      "members": "박찬엽 외 4명",
+      "title": "분석한다",
+      "team": "AI",
+      "members": "박근태 외 7명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
       "like": 12,
       "view": 311,
       "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "웹",
-      "aword" : "2024 우수작"
+      "field": "웹",
+      "aword": "2024 우수작"
     },
     {
-      "title": "예시타이틀2",
-      "team": "팀명",
-      "members": "팀원이름 외 4명",
+      "title": "무엇이든 예측해주지",
+      "team": "파이썬 알고리즘",
+      "members": "이태영 외 3명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
       "like": 15,
       "view": 3,
       "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "앱",
-      "aword" : "2024 우수작"
-    }
-  ],
-  "season3" : [
-    {
-      "title": "이것도 막을수있을까?3",
-      "team": "GAME TEAM",
-      "members": "박근태 외 4명",
-      "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
-      "like": 10,
-      "view": 300,
-      "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "웹"
+      "field": "웹",
+      "aword": "2024 우수작"
     },
     {
-      "title": "쉿, 나만의 메모장3",
-      "team": "APPLICATION TEAM",
-      "members": "김원 외 3명",
-      "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
-      "like": 11,
-      "view": 301,
-      "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "앱",
-      "aword" : "2025 우수작"
-    },
-    {
-      "title": "쇼핑몰3",
-      "team": "WEB TEAM",
-      "members": "박찬엽 외 4명",
-      "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
-      "like": 12,
-      "view": 311,
-      "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "웹"
-    },
-    {
-      "title": "예시타이틀3",
-      "team": "팀명",
-      "members": "팀원이름 외 4명",
+      "title": "불편한게 있다고?",
+      "team": "동국 청원",
+      "members": "권민지 외 6명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
       "like": 15,
       "view": 3,
       "imageUrl": "/images/projectThumb/ex.png",
-      "field" : "앱",
-      "aword" : "2025 우수작"
+      "field": "웹",
+      "aword": "2024 우수작"
     }
   ]
 }

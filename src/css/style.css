@@ -114,6 +114,9 @@ body {
 }
 
 /* main container */
+.main-container-outside{
+    max-width: 100%;
+}
 .main-container {
     max-width: 1360px;
     margin: 0 auto;
@@ -121,7 +124,7 @@ body {
     box-sizing: border-box;
 }
 
-/* a, p, ul, li */
+/* a, p, u, ul, li */
 a {
     text-decoration: none;
 }
@@ -327,6 +330,7 @@ li {
 /* display */
 .display-flex {
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 

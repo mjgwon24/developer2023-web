@@ -13,12 +13,15 @@ const ProjectPage = () => {
     const [selectedTeam, setSelectedTeam] = useState(""); // 선택된 기수
     const [selectedCategory, setSelectedCategory] = useState(""); // 선택된 분야
 
+    const [seasons, setSeasons] = useState([]); // 시즌 목록 저장
     const [isTeamDropdownOpen, setIsTeamDropdownOpen] = useState(false); // 팀 드롭다운 상태
     const [isCategoryDropdownOpen, setIsCategoryDropdownOpen] = useState(false); // 카테고리 드롭다운 상태
 
-    // 컴포넌트가 마운트될 때 project.json 데이터를 가져옴
+    // 컴포넌트가 마운트될 때 project.json 데이터를 가져오고 시즌 정보를 추출
     useEffect(() => {
         let allProjects = [];
+        let seasonList = [];
+
         Object.keys(projectData)
             .sort((a, b) => parseInt(b.replace('season', '')) - parseInt(a.replace('season', ''))) // 시즌 이름을 기준으로 정렬 (숫자로 변환)
             .forEach(seasonKey => {
@@ -26,10 +29,13 @@ const ProjectPage = () => {
                     // 시즌 정보를 프로젝트에 추가
                     allProjects.push({ ...project, season: seasonKey });
                 });
+                // 시즌 목록에 추가 (중복 없이)
+                seasonList.push(seasonKey.replace('season', '') + '기');
             });
 
         setProjects(allProjects); // 모든 프로젝트 데이터를 저장
         setFilteredProjects(allProjects); // 초기 상태에서는 모든 프로젝트를 보여줌
+        setSeasons(seasonList); // 시즌 목록 저장
     }, []);
 
     // 선택된 팀과 분야에 따라 프로젝트 필터링
@@ -83,9 +89,10 @@ const ProjectPage = () => {
                     >
                         <option value="" disabled hidden>기수</option>
                         <option value="전체">전체</option>
-                        <option value="1기">1기</option>
-                        <option value="2기">2기</option>
-                        <option value="3기">3기</option>
+                        {/* 시즌 목록을 동적으로 추가 */}
+                        {seasons.map((season, index) => (
+                            <option key={index} value={season}>{season}</option>
+                        ))}
                     </select>
                     <img
                         src={isTeamDropdownOpen ? top : bottom}

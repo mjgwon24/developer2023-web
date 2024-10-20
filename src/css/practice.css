@@ -1,12 +1,7 @@
-/* About.js 사용 */
-.About {
-    height: 100%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.representative-color{
+    color : #B751F2;
 }
+/* About.js 사용 */
 
 .header {
     font-size: 36px;
@@ -25,16 +20,19 @@
     width: 100%; /* 부모 요소의 100% 너비를 차지 */
 }
 
-.text {
+.about-text {
     flex: 1;
-    font-size: 22px;
+    font-size: 24px;
     max-width: 1000px; /* 텍스트의 최대 너비 제한 */
-    text-align: left;
+    color: #ffffff;
+    font-family: Pretendard-Regular, sans-serif;
+    margin: 0;
 }
 
-.image {
-    width: 450px; /* 가로로만 늘리고 싶은 크기 설정 */
-    height: 400px; /* 원하는 높이 고정 */
+
+.about-image {
+    width: 430px; /* 가로로만 늘리고 싶은 크기 설정 */
+    height: 370px; /* 원하는 높이 고정 */
     border-radius: 10px; /* 모서리를 둥글게 설정 */
 }
 
@@ -50,14 +48,11 @@
 /* 시즌 정보를 위한 스타일 */
 .season-label {
     padding: 5px 10px;
-    border: 1px solid #9933ff; /* 연보라색 테두리 */
-    border-radius: 12px;
+    border: 1px solid #B751F2; /* 연보라색 테두리 */
     background-color: #ffffff; /* 흰색 배경 */
-    color: #9933ff; /* 보라색 텍스트 */
+    color: #B751F2; /* 보라색 텍스트 */
     font-family: 'Pretendard-SemiBold', sans-serif;
     text-align: center;
-    font-size: 14px;
-    margin-left: 10px;
     display: inline-block;
 }
 
