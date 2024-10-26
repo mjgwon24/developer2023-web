@@ -2,10 +2,9 @@ import React from "react";
 
 const MainContainer = ({children}) => {
     return (
-            <div className="main-container">
-                {children}
-            </div>
-
+        <div className="main-container">
+            {children}
+        </div>
     );
 }
 
