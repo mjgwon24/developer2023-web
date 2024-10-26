@@ -28,11 +28,13 @@ const ContactWidget = () => {
                         <span style={styles.contactText}>010-1234-5678</span>
                     </div>
                     <a
-                        href="https://open.kakao.com/o/some-link" // 오픈채팅 URL
+                        href="https://open.kakao.com/o/g9e5BCWg" // 오픈채팅 URL
                         target="_blank"
                         rel="noopener noreferrer"
                         style={styles.kakaoButton}
                     >
+
+
                         <img
                             src={kakaoLogo} // 로컬에 저장한 이미지 경로
                             alt="KakaoTalk"
