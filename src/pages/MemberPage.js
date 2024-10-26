@@ -8,12 +8,11 @@ import { FaGithub, FaLink } from 'react-icons/fa'; // react-icons에서 GitHub�
 /**
  * ContactWidget
  * @since 2024.9.12
- * @author 임석진
+ * 임석진
  */
 
-
 const MemberPage = () => {
-    const [season, setSeason] = useState('all   '); // 기본 시즌은 'all'
+    const [season, setSeason] = useState('all'); // 기본 시즌은 'all'
     const [teams, setTeams] = useState([]);
     const [selectedSeason, setSelectedSeason] = useState('SEASON ▾'); // 드롭다운 버튼의 초기 텍스트
 
@@ -45,7 +44,6 @@ const MemberPage = () => {
                 <p className="font-size-20 title-description-spacing">총 41명의 팀원들이 디벨로퍼와 함께했어요!</p>
             </div>
 
-            {/* 필터 버튼 */}
             <div className="filter-container">
                 <button
                     className={`filter-button ${season === 'all' ? 'active' : ''}`}
@@ -54,7 +52,7 @@ const MemberPage = () => {
                     ALL
                 </button>
                 <div className="dropdown">
-                    <button className={`dropbtn ${season === 'season1' ? 'active' : season === 'season2' ? 'active' : ''}`}>
+                    <button className={`dropbtn ${season !== 'all' ? 'active' : ''}`}>
                         {selectedSeason}
                     </button>
                     <div className="dropdown-content">
@@ -89,7 +87,8 @@ const MemberPage = () => {
                         <div className="team-members-row">
                             {team.members.map((member, i) => (
                                 <div key={i} className="team-member-card">
-                                    <div className="member-image" /> {/* 원형 이미지 */}
+                                    <div className="member-image"/>
+                                    {/* 원형 이미지 */}
                                     <div className="member-info">
                                         <span className="member-name">{member.memberName}</span>
                                     </div>
@@ -105,12 +104,12 @@ const MemberPage = () => {
                                     <div className="member-links">
                                         {member.githubUrl && (
                                             <a href={member.githubUrl} target="_blank" rel="noopener noreferrer">
-                                                <FaGithub size={24} /> {/* GitHub 아이콘 */}
+                                                <FaGithub size={24}/> {/* GitHub 아이콘 */}
                                             </a>
                                         )}
                                         {member.otherLink && (
                                             <a href={member.otherLink} target="_blank" rel="noopener noreferrer">
-                                                <FaLink size={24} /> {/* Other 링크 아이콘 */}
+                                                <FaLink size={24}/> {/* Other 링크 아이콘 */}
                                             </a>
                                         )}
                                     </div>

@@ -6,7 +6,7 @@ import {Outlet} from "react-router";
 const MainHeaderLayout = () => {
     return (
         <div>
-            <Header style={{background: "#182737"}}/>
+            <Header style={{background: "#000"}}/>
             <main>
                 <Outlet />
             </main>

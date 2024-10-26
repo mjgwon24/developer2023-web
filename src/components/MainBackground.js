@@ -42,7 +42,17 @@ else:
 
             <div className="right-container">
                 <div className="code-output fade-in">
-                    <pre>
+                    <pre
+                        style={{
+                            color: "rgba(88, 237, 36, 0.52)",
+                            fontFamily: "'Frank Ruhl Libre', serif",
+                            fontSize: "56px",
+                            fontStyle: "normal",
+                            fontWeight: 900,
+                            lineHeight: "normal",
+
+                        }}
+                    >
                         {displayedText}
                     </pre>
                 </div>
