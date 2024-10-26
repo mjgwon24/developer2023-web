@@ -1,0 +1,65 @@
+/* 배경 및 기본 텍스트 스타일 */
+header {
+    background-color: #000; /* 검정 배경 */
+}
+
+.developer-logo {
+    font-family: 'Frank Ruhl Libre', serif;
+    font-size: 18px;
+    color: #fff;
+}
+
+.nav-link {
+    font-family: 'Pretendard-Regular', sans-serif;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.nav-link:hover {
+    color: #c299fc; /* 보라색으로 변경 */
+}
+
+.active-link {
+    color: #c299fc; /* 클릭된 후 보라색 */
+    font-weight: 500;
+}
+
+/* 가입하러 가기 버튼 스타일 */
+.custom-btn-primary {
+    background: linear-gradient(180deg, #c299fc 0%, #4993fa 100%);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-family: 'Pretendard-Regular', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.custom-btn-primary:hover {
+    background: linear-gradient(180deg, #4993fa 0%, #c299fc 100%);
+}
+
+.width-12 {
+    width: 12px;
+}
+
+.header-developer{
+    font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color: #f4f4f4;
+    font-size: 18px;
+    margin-left: 9px;
+    margin-top: 5px;
+
+}
+
+.header-layout{
+    padding: 27px;
+}
