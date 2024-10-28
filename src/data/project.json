@@ -1,22 +1,23 @@
 {
   "season1": [
     {
-      "projectId": 1,
       "title": "이것도 막을수있을까?",
       "team": "GAME TEAM",
       "members": "박근태 외 4명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
+      "like": 10,
+      "view": 300,
       "imageUrl": "/images/projectThumb/ex.png",
       "field": "웹",
-      "aword": "2023 우수작",
-      "gitUrl": ""
+      "aword": "2023 우수작"
     },
     {
-      "projectId": 2,
       "title": "쉿, 나만의 메모장",
       "team": "APPLICATION TEAM",
       "members": "김원 외 3명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
+      "like": 11,
+      "view": 301,
       "imageUrl": "/images/projectThumb/ex.png",
       "field": "웹",
       "aword": "2023 우수작"
@@ -26,6 +27,8 @@
       "team": "WEB TEAM",
       "members": "박찬엽 외 4명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
+      "like": 12,
+      "view": 311,
       "imageUrl": "/images/projectThumb/ex.png",
       "field": "웹"
     }
@@ -36,6 +39,8 @@
       "team": "스터디히어로",
       "members": "김이현 외 5명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
+      "like": 10,
+      "view": 300,
       "imageUrl": "/images/projectThumb/ex.png",
       "field": "웹"
     },
@@ -44,6 +49,8 @@
       "team": "금장 어때",
       "members": "김주찬 외 3명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
+      "like": 11,
+      "view": 301,
       "imageUrl": "/images/projectThumb/ex.png",
       "field": "웹"
     },
@@ -52,6 +59,8 @@
       "team": "AI",
       "members": "박근태 외 7명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
+      "like": 12,
+      "view": 311,
       "imageUrl": "/images/projectThumb/ex.png",
       "field": "웹",
       "aword": "2024 우수작"
@@ -61,6 +70,8 @@
       "team": "파이썬 알고리즘",
       "members": "이태영 외 3명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
+      "like": 15,
+      "view": 3,
       "imageUrl": "/images/projectThumb/ex.png",
       "field": "웹",
       "aword": "2024 우수작"
@@ -70,6 +81,8 @@
       "team": "동국 청원",
       "members": "권민지 외 6명",
       "description": " 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, 제작 툴, 게임설명, ",
+      "like": 15,
+      "view": 3,
       "imageUrl": "/images/projectThumb/ex.png",
       "field": "웹",
       "aword": "2024 우수작"

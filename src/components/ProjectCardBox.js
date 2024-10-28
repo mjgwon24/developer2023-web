@@ -1,13 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-/**
- * 프로젝트 상세 페이지
- * @author 김진수
- * @since 2024.09.22
- * @lastmodified 2024.10.28
- */
-
 const ProjectCardBox = ({ project, type }) => {
     const navigate = useNavigate();
 
@@ -16,14 +9,13 @@ const ProjectCardBox = ({ project, type }) => {
     };
 
     // Set card box size based on type or default size
-// Set card box size based on type or default size
     const cardStyle = {
         width: type === "ProjectPage" ? "320px" : "300px", // Larger size when 'ProjectPage'
         height: type === "ProjectPage" ? "430px" : "400px", // 기본 크기: 300px * 400px
+        border: "1px solid #d1d1d1",
         borderRadius: "8px",
         background: "white"
     };
-
 
     // Always fix image size to 220px
     const imgStyle = {
@@ -39,6 +31,9 @@ const ProjectCardBox = ({ project, type }) => {
         borderRadius : type === "ProjectPage" ? "7px" : "5px",
         paddingTop: type === "ProjectPage" ? "5px" : "3px",
         fontSize: type === "ProjectPage" ? "15px" : "13px",
+    }
+    const likepadding = {
+        paddingTop : type === "ProjectPage" ? "25px" : "15px"
     }
 
     return (
@@ -57,6 +52,11 @@ const ProjectCardBox = ({ project, type }) => {
                 </div>
 
                 <p className="text-align-start margin-top-10 weight-400">{project.description}</p>
+
+                <div className="display-flex justify-end gap-5p margin-top-10 weight-400 font-size-14" style = {likepadding}>
+                    <p>{project.like} like</p>
+                    <p>{project.view} view</p>
+                </div>
             </div>
         </div>
     );

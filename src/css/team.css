@@ -1,111 +1,99 @@
- /* Team2 섹션 전체 스타일 */
+/* Team2 섹션 전체 스타일 */
+.team-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+/* Team2 섹션 전체 스타일 */
 .team-section3 {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 62px;
-    padding: 40px;
+    gap: 20px;
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.team-section4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.team-container {
+    display: flex;
+    justify-content: center; /* 팀 카드 컨테이너를 가운데 정렬 */
+    margin: 40px 0; /* 상하 여백 추가 */
 }
 
 
-.member-card {
-    flex-basis: calc(30% - 20px); /* 3개의 카드가 한 줄에 들어가도록 설정, 20px은 gap을 고려 */
-    height: 133px; /* 고정된 높이 */
-    border-radius: 50px;
-    border: 5px solid var(--custom-color, #B751F2);
-    background-color: white;
+/* 팀 카드 스타일 */
+.team-card {
+    background-color: #e6f0ff; /* 카드만 연한 파랑 배경 */
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
     text-align: center;
+    width: 250px;
     transition: transform 0.3s ease;
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 10px; /* 카드 간 간격 */
+    margin-left: 25px;
 }
 
-.member-card:hover {
+.team-card:hover {
     transform: translateY(-5px); /* 마우스를 올렸을 때 위로 살짝 올라가는 효과 */
-
-}
-.team-text{
-    text-align: center;
-    font-family: Pretendard;
-    font-size: 46px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.team-text2{
-    text-align: center;
-    font-family: Pretendard;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-.team-text3{
-    color: var(--t--colors-base-white, #A59C9C);
-    text-align: center;
-    font-family: Pretendard;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
 .team-name {
-    color: #1F2937;
-    text-align: center;
-    font-family: Pretendard;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .team-members {
-    color: #b751f2;
-    text-align: center;
-    font-family: Pretendard;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
 }
 
+/* 누적 인원 섹션 */
 .total-members-section {
-
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .total-members-section p {
-    color: var(--t--colors-base-white, #A59C9C);
-    text-align: center;
-    font-family: Pretendard;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 10px;
 }
 
 .total-members-section h2 {
-    color: black;
-    font-family: Pretendard;
-    font-size: 50px;
-    font-style: normal;
+    font-size: 36px;
     font-weight: 700;
-    line-height: normal;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .total-members-section a {
-    color: #DDD;
-    text-align: center;
-    font-family: Pretendard;
     font-size: 16px;
-    font-style: normal;
     font-weight: 500;
-    line-height: normal;
+    color: #007bff;
+    text-decoration: none;
 }
 
 .total-members-section a:hover {
@@ -121,22 +109,14 @@
 }
 
 .season {
-    margin-left: 54px;
-    margin-right: 54px;
-
+    font-size: 24px;
+    font-weight: bold;
     cursor: pointer;
-    color: black;
-    text-align: center;
-    font-family: Pretendard;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-
+    color: #333;
 }
 
 .season.active {
-    color: #9427D7;
+    color: #007bff;
 }
 
 /* 반응형 처리 */
@@ -155,4 +135,3 @@
         font-size: 28px;
     }
 }
-
