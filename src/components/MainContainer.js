@@ -6,6 +6,8 @@ const MainContainer = ({ children }) => {
             {React.Children.map(children, (child) => {
                 let backgroundColor = "#ffffff"; // 기본 배경색
 
+
+
                 // 각 child의 타입에 따라 배경색을 변경
                 if (child.type && child.type.name === "About") {
                     backgroundColor = "#191919";
