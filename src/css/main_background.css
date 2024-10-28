@@ -1,4 +1,4 @@
-/* 전체 페이지 스타일 */
+
 .main-background {
     background-color: black; /* 배경색 */
     color: white; /* 기본 텍스트 색상 */
@@ -19,7 +19,7 @@
     margin-left: 20px;  /* 왼쪽 정렬 */
 }
 
-/* 로맨틱한 폰트 적용된 "개발을 통해 성장하는 우리들의 이야기" */
+
 .white-text {
     font-family: 'Dancing Script', cursive;
     font-size: 1.7rem;
@@ -69,3 +69,4 @@
         opacity: 1;
     }
 }
+

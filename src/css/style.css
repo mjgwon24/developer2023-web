@@ -102,6 +102,7 @@ body {
 @media (min-width: 1360px) {
     body, #root {
         min-height: 100vh;
+        background-color: black;
     }
 }
 

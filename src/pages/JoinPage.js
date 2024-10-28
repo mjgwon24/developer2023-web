@@ -111,3 +111,4 @@ const styles = {
 };
 
 export default JoinPage;
+

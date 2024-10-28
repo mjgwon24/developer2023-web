@@ -10,22 +10,22 @@
     align-items: center; /* 수직 중앙 정렬 */
 }
 
-/* Times New Roman을 적용한 DEVELOPER */
 .developer-text {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 5.5rem;  /* 크기를 크게 설정 */
-    color: white;
-    text-align: left;
-    margin-left: 20px;  /* 왼쪽 정렬 */
+    color: #ffffff;
+    font-family: "Frank Ruhl Libre";
+    font-size: 86px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
 }
 
-/* 로맨틱한 폰트 적용된 "개발을 통해 성장하는 우리들의 이야기" */
 .white-text {
-    font-family: 'Dancing Script', cursive;
     font-size: 1.7rem;
     color: white;
     text-align: left;
     margin-left: 20px; /* 왼쪽 정렬 */
+    height: 29px;
+
 
 }
 
@@ -37,7 +37,7 @@
     justify-content: flex-start; /* 위쪽에 정렬 */
     align-items: flex-start;
     margin-bottom: 350px; /* 위로 띄우기 위한 여백 추가 */
-    padding-left: 100px; /* 왼쪽 여백 추가 */
+    padding-left: 58px; /* 왼쪽 여백 추가 */
 }
 
 /* 오른쪽 애니메이션이 들어가는 코드 영역 */
@@ -46,7 +46,7 @@
     display: flex;
     justify-content: center; /* 가운데 정렬 */
     align-items: center;
-    margin-right: 200px; /* 오른쪽 여백 추가 */
+    margin-right: 136px; /* 오른쪽 여백 추가 */
 }
 
 /* 코드 출력 스타일 */
@@ -72,3 +72,4 @@
         opacity: 1;
     }
 }
+

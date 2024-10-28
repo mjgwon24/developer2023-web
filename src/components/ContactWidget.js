@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faCommentDots } from '@fortawesome/free-solid-svg-icons';  // Font Awesome 아이콘
-
-/**
- * ContactWidget
- * @since 2024.10.10
- * @author 임석진
- */
+import { faPhoneAlt } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'; // 전화 아이콘
+import kakaoLogo from '../images/backgroundAndPicture/kakao_logo.png';
 
 const ContactWidget = () => {
     const [isCardVisible, setIsCardVisible] = useState(false);
@@ -22,29 +18,31 @@ const ContactWidget = () => {
             <div style={styles.widgetButton} onClick={toggleCardVisibility}>
                 <FontAwesomeIcon icon={faEnvelope} style={styles.mailIcon} />
             </div>
-
             {/* 연락처 카드 */}
             {isCardVisible && (
                 <div style={styles.cardContainer}>
-                    <div style={styles.cardBox}>
-                        <h2 style={styles.header}>DEVELOPER</h2>
-                        <div style={styles.profileCard}>
-                            <div style={styles.profileImagePlaceholder}></div>
-                            <div style={styles.infoContainer}>
-                                <p style={styles.name}>관리자</p>
-                                <p style={styles.contact}>010-1234-5678</p>
-                                <p style={styles.email}>ee@email.com</p>
-                            </div>
-                        </div>
-                        <div style={styles.inquiryWrapper}>
-                            {/* 하나의 버튼 안에 아이콘과 텍스트를 배치 */}
-                            <button style={styles.inquiryButton}>
-                                <FontAwesomeIcon icon={faCommentDots} style={styles.inquiryIconInButton} />
-                                동아리 가입/활동 문의
-                            </button>
-                        </div>
-                        <button style={styles.closeButton} onClick={toggleCardVisibility}>X</button>
+                    <h2 style={styles.header}>문의하기</h2>
+                    <p style={styles.description}>문의사항이 있으실 경우 아래로 연락 주세요!</p>
+                    <div style={styles.contactBox}>
+                        <FontAwesomeIcon icon={faPhoneAlt} style={styles.contactIcon} />
+                        <span style={styles.contactText}>010-1234-5678</span>
                     </div>
+                    <a
+                        href="https://open.kakao.com/o/g9e5BCWg" // 오픈채팅 URL
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={styles.kakaoButton}
+                    >
+
+
+                        <img
+                            src={kakaoLogo} // 로컬에 저장한 이미지 경로
+                            alt="KakaoTalk"
+                            style={styles.kakaoIcon}
+                        />
+                        카카오톡으로 문의하기
+                    </a>
+                    <button style={styles.closeButton} onClick={toggleCardVisibility}>X</button>
                 </div>
             )}
         </>
@@ -59,7 +57,7 @@ const styles = {
         right: '20px',
         width: '60px',
         height: '60px',
-        backgroundColor: '#a852ff',
+        backgroundColor: '#6200ea',
         borderRadius: '50%',
         display: 'flex',
         justifyContent: 'center',
@@ -69,97 +67,67 @@ const styles = {
     },
     mailIcon: {
         color: 'white',
-        fontSize: '30px',
+        fontSize: '26px', // 원하는 크기로 변경 가능
     },
     cardContainer: {
         position: 'fixed',
         bottom: '100px',
         right: '20px',
-        width: '250px',
+        width: '300px',
+        height: '190px',
         padding: '20px',
         background: '#fff',
         borderRadius: '15px',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-        textAlign: 'center',
         fontFamily: 'Arial, sans-serif',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        height: '360px',
-    },
-    cardBox: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100%',
+        textAlign: 'center',
     },
     header: {
-        fontSize: '20px',
+        fontSize: '22px',
         fontWeight: 'bold',
-        fontFamily: '"Times New Roman", Times, serif',
-        color: '#333',
-        marginBottom: '30px',  // 하단 여백 유지
-    },
-    profileCard: {
-        background: 'linear-gradient(180deg, #f5e5ff 0%, #d8ecff 100%)',
-        padding: '15px',
-        borderRadius: '10px',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-        textAlign: 'center',
-        width: '130px',
-        marginBottom: '35px',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-    },
-    profileImagePlaceholder: {
-        width: '80px',
-        height: '80px',
-        borderRadius: '50%',
-        backgroundColor: '#ddd',
         marginBottom: '10px',
     },
-    infoContainer: {
-        textAlign: 'center',
-    },
-    name: {
-        fontSize: '16px',
-        fontWeight: 'bold',
-        marginBottom: '8px',
-    },
-    contact: {
+    description: {
         fontSize: '14px',
-        marginBottom: '5px',
-    },
-    email: {
-        fontSize: '14px',
-        marginBottom: '15px',
-    },
-    inquiryWrapper: {
-        position: 'relative',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        color: '#3B3B3B',
         marginBottom: '20px',
     },
-    inquiryButton: {
-        backgroundColor: '#a852ff',
-        color: 'white',
-        border: 'none',
-        padding: '12px 25px',
-        borderRadius: '25px',
-        cursor: 'pointer',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-        position: 'relative',
-        zIndex: '1',
+    contactBox: {
+        backgroundColor: '#f0f0f0',
+        padding: '10px',
+        borderRadius: '8px',
         display: 'flex',
-        alignItems: 'center',  // 아이콘과 텍스트를 같은 라인에 정렬
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: '20px',
+
     },
-    inquiryIconInButton: {
-        fontSize: '20px',
-        color: 'white',
-        marginRight: '8px',  // 아이콘과 텍스트 간격
+    contactIcon: {
+        fontSize: '24px',
+        marginRight: '10px',
+        color: '#333',
+    },
+    contactText: {
+        fontSize: '18px',
+        color: '#191919'
+    },
+    kakaoButton: {
+        backgroundColor: '#fee500',
+        color: 'black',
+        textDecoration: 'none',
+        padding: '12px',
+        borderRadius: '10px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        fontSize: '16px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+        marginBottom: '20px',
+    },
+    kakaoIcon: {
+        width: '20px',
+        marginRight: '10px',
     },
     closeButton: {
         backgroundColor: '#ff4d4d',
@@ -169,10 +137,11 @@ const styles = {
         height: '30px',
         borderRadius: '5px',
         position: 'absolute',
-        bottom: '10px',
+        top: '10px',
         right: '10px',
         cursor: 'pointer',
     },
 };
 
 export default ContactWidget;
+

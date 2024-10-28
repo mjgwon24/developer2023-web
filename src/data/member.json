@@ -1,92 +1,122 @@
+
 {
   "season1": [
     {
-      "teamName": "WEB1 TEAM",
+      "teamName": "POQ",
       "members": [
-        { "id": 1, "memberName": "김민성", "memberRole": "DB,SERVER", "githubUrl": "https://github.com/park3", "thumbnail": "profile1.jpg" },
-        { "id": 2, "memberName": "서종우", "memberRole": "DB,SERVER", "githubUrl": "https://github.com/park3", "otherLink": "https://other.link3", "thumbnail": "profile2.jpg" },
-        { "id": 3, "memberName": "전상은", "memberRole": "BackEnd", "githubUrl": "https://github.com/park3", "otherLink": "https://other.link3", "thumbnail": "profile3.jpg" },
-        { "id": 4, "memberName": "양윤기", "memberRole": "React", "githubUrl": "https://github.com/park3", "otherLink": "https://other.link3", "thumbnail": "profile4.jpg" },
-        { "id": 5, "memberName": "조준형", "memberRole": "BackEnd", "githubUrl": "https://github.com/park3", "otherLink": "https://other.link3", "thumbnail": "profile5.jpg" }
+        { "id": 1, "memberName": "전상은", "memberRole": ["BackEnd", "PM"], "githubUrl": "https://github.com/seokjin925npm", "otherLink": "https://other.link3", "thumbnail": "profile3.jpg" },
+        { "id": 2, "memberName": "김민성", "memberRole": "DB", "githubUrl": "https://github.com/park3", "thumbnail": "profile1.jpg" },
+        { "id": 3, "memberName": "서종우", "memberRole": ["DB","Server"], "githubUrl": "https://github.com/park3", "otherLink": "https://other.link3", "thumbnail": "profile2.jpg" },
+        { "id": 4, "memberName": "양윤기", "memberRole": ["React","NodeJs"], "githubUrl": "https://github.com/park3", "otherLink": "https://other.link3", "thumbnail": "profile4.jpg" },
+        { "id": 5, "memberName": "조준형", "memberRole": ["FrontEnd","BackEnd","Server"], "githubUrl": "https://github.com/park3", "otherLink": "https://other.link3", "thumbnail": "profile5.jpg" }
       ]
     },
     {
-      "teamName": "APP TEAM",
+      "teamName": "Memo APP",
       "members": [
-        { "id": 6, "memberName": "권민지", "memberRole": "PM", "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile6.jpg" },
-        { "id": 7, "memberName": "김원", "memberRole": "Developer", "githubUrl": "https://github.com/kim2", "otherLink": "https://other.link2", "thumbnail": "profile7.jpg" },
-        { "id": 8, "memberName": "손병혁", "memberRole": "Tester", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile8.jpg" },
-        { "id": 9, "memberName": "윤창희", "memberRole": "Tester", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile9.jpg" }
+        { "id": 6, "memberName": "김원",   "memberRole": "PM", "githubUrl": "https://github.com/kim2", "otherLink": "https://other.link2", "thumbnail": "profile7.jpg" },
+        { "id": 7, "memberName": "권민지", "memberRole": ["FrontEnd","BackEnd"], "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile6.jpg" },
+        { "id": 8, "memberName": "손병혁", "memberRole": ["Front","Design"], "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile8.jpg" },
+        { "id": 9, "memberName": "윤창희", "memberRole": "Security", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile9.jpg" },
+        { "id": 10, "memberName": "이세빈", "memberRole": "Frontend", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile9.jpg" }
       ]
     },
     {
-      "teamName": "WEP TEAM",
+      "teamName": "ShoppingMall",
       "members": [
-        { "id": 10, "memberName": "김진수", "memberRole": "PM", "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile10.jpg" },
-        { "id": 11, "memberName": "박창윤", "memberRole": "Developer", "githubUrl": "https://github.com/kim2", "otherLink": "https://other.link2", "thumbnail": "profile11.jpg" },
-        { "id": 12, "memberName": "이예은", "memberRole": "Tester", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile12.jpg" },
-        { "id": 13, "memberName": "문종찬", "memberRole": "Tester", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile13.jpg" },
-        { "id": 14, "memberName": "박찬엽", "memberRole": "PM", "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile14.jpg" },
-        { "id": 15, "memberName": "표준수", "memberRole": "PM", "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile15.jpg" },
-        { "id": 16, "memberName": "한보미", "memberRole": "PM", "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile16.jpg" }
+        { "id": 11, "memberName": "박찬엽", "memberRole": "PM", "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile14.jpg" },
+        { "id": 12, "memberName": "김진수", "memberRole": "Club Leader", "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile10.jpg" },
+        { "id": 13, "memberName": "박창윤", "memberRole": "BackEnd", "githubUrl": "https://github.com/kim2", "otherLink": "https://other.link2", "thumbnail": "profile11.jpg" },
+        { "id": 14, "memberName": "이예은", "memberRole": "BackEnd", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile12.jpg" },
+        { "id": 15, "memberName": "문종찬", "memberRole": "FrontEnd", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile13.jpg" },
+        { "id": 16, "memberName": "표준수", "memberRole": "FrontEnd", "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile15.jpg" },
+        { "id": 17, "memberName": "한보미", "memberRole": ["Server","security","Design"], "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile16.jpg" }
       ]
     },
     {
-      "teamName": "GAME TEAM",
+      "teamName": "Game & AI",
       "members": [
-        { "id": 17, "memberName": "김문석", "memberRole": "PM", "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile17.jpg" },
-        { "id": 18, "memberName": "김동위", "memberRole": "Developer", "githubUrl": "https://github.com/kim2", "otherLink": "https://other.link2", "thumbnail": "profile18.jpg" },
-        { "id": 19, "memberName": "진현명", "memberRole": "Tester", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile19.jpg" },
-        { "id": 20, "memberName": "김석현", "memberRole": "Tester", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile20.jpg" },
-        { "id": 21, "memberName": "채종인", "memberRole": "Tester", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile21.jpg" },
-        { "id": 22, "memberName": "주홍진", "memberRole": "Tester", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile22.jpg" },
-        { "id": 23, "memberName": "박근태", "memberRole": "Tester", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile23.jpg" },
-        { "id": 24, "memberName": "홍승민", "memberRole": "Tester", "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile24.jpg" }
+        { "id": 18, "memberName": "박근태", "memberRole": ["PM","FrontEnd","BackEnd"], "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile23.jpg" },
+        { "id": 19, "memberName": "홍승민", "memberRole": ["BackEnd","Design"], "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile24.jpg" },
+        { "id": 20, "memberName": "김문석", "memberRole": ["BackEnd","FrontEnd","Server","Security"], "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile17.jpg" },
+        { "id": 21, "memberName": "김동위", "memberRole": ["Server","DB","Security"], "githubUrl": "https://github.com/kim2", "otherLink": "https://other.link2", "thumbnail": "profile18.jpg" },
+        { "id": 22, "memberName": "진현명", "memberRole": ["FrontEnd","BackEnd"], "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile19.jpg" },
+        { "id": 23, "memberName": "김석현", "memberRole": ["FrontEnd","BackEnd"], "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile20.jpg" },
+        { "id": 24, "memberName": "채종인", "memberRole": ["FrontEnd","BackEnd"], "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile21.jpg" },
+        { "id": 25, "memberName": "주홍진", "memberRole": ["FrontEnd","BackEnd"], "githubUrl": "https://github.com/kang5", "otherLink": "https://other.link5", "thumbnail": "profile22.jpg" }
+
+
       ]
     },
     {
-      "teamName": "STACK UP",
+      "teamName": "Stack UP",
       "members": [
-        { "id": 25, "memberName": "이규원", "memberRole": "PM", "githubUrl": "https://github.com/hong1", "otherLink": "https://other.link1", "thumbnail": "profile25.jpg" }
+        { "id": 26, "memberName": "이규원", "memberRole": ["Security","Firmware Auditing"], "githubUrl": "https://github.com/Gyuwon-Yonsei-CPSS /", "otherLink": "https://sites.google.com/view/leegyuwon", "thumbnail": "profile25.jpg" }
       ]
     }
   ],
   "season2": [
     {
-      "teamName": "GAME TEAM1",
+      "teamName": "Study Hero",
       "members": [
-        { "id": 26, "memberName": "ㄱ", "memberRole": ["Developer" , "PM"], "githubUrl": "https://github.com/lee4", "thumbnail": "profile26.jpg" },
-        { "id": 27, "memberName": "ㄴ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile27.jpg" },
-        { "id": 28, "memberName": "ㄷ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile28.jpg" },
-        { "id": 29, "memberName": "ㄹ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile29.jpg" }
+        { "id": 27, "memberName": "김진수", "memberRole": "Club Leader", "githubUrl": "https://github.com/kimjs991229@dongguk.ac.kr", "thumbnail": "profile26.jpg" },
+        { "id": 28, "memberName": "김이현", "memberRole": ["FrontEnd","BackEnd"], "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile27.jpg" },
+        { "id": 29, "memberName": "김은채", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile28.jpg" },
+        { "id": 30, "memberName": "이호준", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile29.jpg" },
+        { "id": 31, "memberName": "안병찬", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile29.jpg" },
+        { "id": 32, "memberName": "권성현", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile29.jpg" },
+        { "id": 33, "memberName": "임채은", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile29.jpg" },
+        { "id": 34, "memberName": "김현나", "memberRole": ["FrontEnd","Design"], "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile29.jpg" }
       ]
     },
     {
-      "teamName": "WEP TEAM2",
+      "teamName": "Dongguk Petitons",
       "members": [
-        { "id": 30, "memberName": "ㅁ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "thumbnail": "profile30.jpg" },
-        { "id": 31, "memberName": "ㅂ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile31.jpg" },
-        { "id": 32, "memberName": "ㅅ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile32.jpg" },
-        { "id": 33, "memberName": "ㅇ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile33.jpg" }
+        { "id": 35, "memberName": "김진수", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "thumbnail": "profile30.jpg" },
+        { "id": 36, "memberName": "김주찬", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile31.jpg" },
+        { "id": 37, "memberName": "김이현", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile32.jpg" },
+        { "id": 38, "memberName": "이태영", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile33.jpg" },
+        { "id": 39, "memberName": "박근태", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile33.jpg" },
+        { "id": 40, "memberName": "권민지", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile33.jpg" },
+        { "id": 41, "memberName": "김동민", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile33.jpg" }
+      ]
+    },
+
+    {
+      "teamName": "Stack Snapshot",
+      "members": [
+        { "id": 42, "memberName": "김주찬", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile38.jpg" },
+        { "id": 43, "memberName": "김이현", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile39.jpg" },
+        { "id": 44, "memberName": "박근태", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile40.jpg" },
+        { "id": 45, "memberName": "이규원", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile41.jpg" },
+        { "id": 46, "memberName": "권민지", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile39.jpg" },
+        { "id": 47, "memberName": "김동민", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile40.jpg" },
+        { "id": 48, "memberName": "전형주", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile41.jpg" }
+      ]
+    },
+
+    {
+      "teamName": "AI",
+      "members": [
+        { "id": 49, "memberName": "전형주", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile34.jpg" },
+        { "id": 50, "memberName": "임찬빈", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile35.jpg" },
+        { "id": 51, "memberName": "이채민", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile36.jpg" },
+        { "id": 52, "memberName": "이진욱", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile37.jpg" },
+        { "id": 53, "memberName": "방상혁", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile36.jpg" },
+        { "id": 54, "memberName": "배현진", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile37.jpg" },
+        { "id": 55, "memberName": "이채민", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile36.jpg" },
+        { "id": 56, "memberName": "황도현", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile37.jpg" }
       ]
     },
     {
-      "teamName": "APP TEAM3",
+      "teamName": "Web Site",
       "members": [
-        { "id": 34, "memberName": "ㅈ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile34.jpg" },
-        { "id": 35, "memberName": "ㅊ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile35.jpg" },
-        { "id": 36, "memberName": "ㅋ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile36.jpg" },
-        { "id": 37, "memberName": "ㅌ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile37.jpg" }
-      ]
-    },
-    {
-      "teamName": "STUDY TEAM4",
-      "members": [
-        { "id": 38, "memberName": "ㅍ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile38.jpg" },
-        { "id": 39, "memberName": "ㅎ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile39.jpg" },
-        { "id": 40, "memberName": "ㄱ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile40.jpg" },
-        { "id": 41, "memberName": "ㄴ", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile41.jpg" }
+        { "id": 57, "memberName": "김주찬", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile38.jpg" },
+        { "id": 58, "memberName": "이한샘", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile39.jpg" },
+        { "id": 59, "memberName": "이김", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile40.jpg" },
+        { "id": 60, "memberName": "이채준", "memberRole": "Developer", "githubUrl": "https://github.com/lee4", "otherLink": "https://other.link4", "thumbnail": "profile41.jpg" }
       ]
     }
   ]
 }
+
