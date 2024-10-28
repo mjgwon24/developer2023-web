@@ -8,6 +8,8 @@ const MainContainer = ({ children }) => {
 
 
 
+
+
                 // 각 child의 타입에 따라 배경색을 변경
                 if (child.type && child.type.name === "About") {
                     backgroundColor = "#191919";
