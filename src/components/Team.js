@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import memberData from '../data/member.json'; // JSON 데이터 가져오기
 import '../css/style.css';
@@ -62,7 +60,7 @@ const Team = () => {
             </div>
 
             {/* 누적 활동 인원 */}
-            <div className="total-members-section text-align-center margin-top-40">
+            <div className="total-members-section text-align-center">
                 <p className="team-text3">누적 활동 인원</p>
                 {/* member.json에서 계산한 총 멤버 수 표시 */}
                 <h2 className="font-size-48 weight-600">총 {totalMembers}명</h2>

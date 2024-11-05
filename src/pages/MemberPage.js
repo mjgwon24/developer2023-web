@@ -11,37 +11,43 @@ import { FaGithub, FaLink } from 'react-icons/fa'; // react-icons에서 GitHub�
  * 임석진
  */
 
+
 const MemberPage = () => {
     const [season, setSeason] = useState('all'); // 기본 시즌은 'all'
     const [teams, setTeams] = useState([]);
     const [selectedSeason, setSelectedSeason] = useState('SEASON ▾'); // 드롭다운 버튼의 초기 텍스트
 
+
+    const totalMembers = memberData.season1.reduce((count, team) => count + team.members.length, 0)
+        + memberData.season2.reduce((count, team) => count + team.members.length, 0);
+
     useEffect(() => {
-        // 시즌에 따라 팀 데이터 설정
+
         if (season === 'season1') {
             setTeams(memberData['season1']);
-            setSelectedSeason('SEASON 1'); // 선택된 시즌 텍스트 설정
+            setSelectedSeason('SEASON 1');
         } else if (season === 'season2') {
             setTeams(memberData['season2']);
-            setSelectedSeason('SEASON 2'); // 선택된 시즌 텍스트 설정
+            setSelectedSeason('SEASON 2');
         } else {
-            // all일 때는 season2를 먼저, season1을 나중에 합쳐서 설정
+
             setTeams([...memberData['season2'], ...memberData['season1']]);
-            setSelectedSeason('SEASON'); // 선택된 시즌 텍스트 설정
+            setSelectedSeason('SEASON');
         }
     }, [season]);
 
-    // 시즌 변경 핸들러
     const handleSeasonChange = (newSeason) => {
         setSeason(newSeason);
     };
 
     return (
         <div className="member-page">
-            {/* 페이지 타이틀 */}
+
             <div className="text-align-center padding85-0">
-                <h1 className="font-size-36 weight-700">MEMBER</h1>
-                <p className="font-size-20 title-description-spacing">총 41명의 팀원들이 디벨로퍼와 함께했어요!</p>
+                <h1 className="font-size-46 weight-700 color-white">MEMBER</h1>
+                <p className="font-size-24 title-description-spacing color-white">
+                    <span className="highlight-total">총 {totalMembers}명</span>의 팀원들이 디벨로퍼와 함께했어요!
+                </p>
             </div>
 
             <div className="filter-container">
@@ -83,12 +89,12 @@ const MemberPage = () => {
                             </span>
                         </div>
 
-                        {/* 팀 멤버들을 3명씩 나누어 그룹화하고 각 그룹을 줄로 렌더링 */}
+
                         <div className="team-members-row">
                             {team.members.map((member, i) => (
                                 <div key={i} className="team-member-card">
                                     <div className="member-image"/>
-                                    {/* 원형 이미지 */}
+
                                     <div className="member-info">
                                         <span className="member-name">{member.memberName}</span>
                                     </div>
@@ -124,4 +130,3 @@ const MemberPage = () => {
 };
 
 export default MemberPage;
-
