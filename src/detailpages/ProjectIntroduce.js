@@ -1,8 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom"; // URL에서 파라미터를 가져오기 위한 useParams
 import projectsData from "../data/project.json"; // JSON 파일 import
-import "../css/style.css"; // CSS 파일
-import "../css/practice.css";
+
 import id1 from "../images/projectDetail/detail_경주의밤.png";
 import id2 from "../images/projectDetail/detail_스택네컷.png";
 import id3 from "../images/projectDetail/detail_스터디히어로.png";

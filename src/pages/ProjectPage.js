@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import ProjectCardBox from "../components/ProjectCardBox";
 import projectData from "../data/project.json";
-import "../css/style.css";
-import "../css/practice.css";
-import "../css/team.css";
+
 import top from "../images/icon/vector_top_black.png";
 import bottom from "../images/icon/vector_bottom_black.png";
 
@@ -119,17 +117,17 @@ const ProjectPage = () => {
     return (
         <div className="project-container">
             <div className="text-align-center padding85-0">
-                <h1 className="font-size-36 weight-700 color-white">
+                <h1 className="project-page-title">
                     PROJECT
                 </h1>
-                <p className="font-size-20 weight-500 color-white padding-top-20">
+                <p className="project-page-subtitle">
                     함께이기에 완성할 수 있었던 우리의 결과물들
                 </p>
             </div>
 
             <div className="filter-dropdowns">
                 <div
-                    className="dropdown-label font-size-16"
+                    className="dropdown-label"
                     style={{
                         marginRight: "5px",
                     }}
@@ -140,7 +138,7 @@ const ProjectPage = () => {
                         {selectedTeam}
                     </div>
 
-                    <img src={isTeamDropdownOpen ? top : bottom} alt="dropdown icon"/>
+                    <img src={isTeamDropdownOpen ? top : bottom} alt="dropdown icon" className="DropdownIcon"/>
                     {isTeamDropdownOpen && (
                         <ul className="dropdown-button">
                             {["전체", ...seasons].map((team, index, categories) => (
@@ -164,7 +162,7 @@ const ProjectPage = () => {
                 </div>
 
                 <div
-                    className="dropdown-label font-size-16"
+                    className="dropdown-label"
                     style={{
                         marginRight: "0px",
                     }}
@@ -200,14 +198,6 @@ const ProjectPage = () => {
 
             <div
                 className="project-list"
-                style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(3, 1fr)",
-                    rowGap: "50px",
-                    columnGap: "30px",
-                    justifyItems: "center",
-                    minHeight: "400px", // 프로젝트 리스트 높이를 설정
-                }}
             >
                 {filteredProjects.length > 0 ? (
                     filteredProjects.map((project, index) => (

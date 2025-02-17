@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ProjectCardBox from "./ProjectCardBox";
 import projectsData from "../data/project.json";
-import "../css/style.css";
+
 import { Button } from "react-scroll";
     /**
      * ProjectPage 컴포넌트
@@ -171,10 +171,10 @@ import { Button } from "react-scroll";
         return (
             <div className="text-align-center padding85-0" ref={containerRef}>
                 <div className="display-flex flex-direction-column gap-1r margin-bottom-60">
-                    <h2 className="font-size-36 weight-700 project-text color-white">
+                    <h2 className="project-list-title">
                         달려온 결과
                     </h2>
-                    <p className="font-size-22 weight-400 project-text color-white">
+                    <p className="project-list-subscription weight-400 project-text color-white">
                         저희가 만든 프로젝트, 궁금하신가요?
                     </p>                 
                 </div>
@@ -196,22 +196,16 @@ import { Button } from "react-scroll";
                         <div
                             key={index}
                             onClick={() => handleDotClick(index)}
-                            style={{
-                                width: '7px',
-                                height: '7px',
-                                borderRadius: '50%',
-                                backgroundColor: currentIndex === index ? '#FFFFFF' : '#777',
-                                cursor: 'pointer',
-                                transition: 'background-color 0.3s ease'
-                            }}
+                            className={`${currentIndex === index?'dot selected':'dot'}`}
+                            
                         />
                     ))}
                 </div>
 
 
                 {/* 더 보기 링크 */}
-                <div className="project-text" style={{ marginTop: '20px', cursor: 'pointer', color: "#FFFFFF" }}>
-                    <p className="font-size-16 weight-400 color-gray project-link" onClick={() => window.location.href = "/project"}>
+                <div className="project-text show-more">
+                    <p className="weight-400 color-gray project-link" onClick={() => window.location.href = "/project"}>
                         더 보러가기 &gt;
                     </p>
                 </div>

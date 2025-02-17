@@ -29,7 +29,7 @@
       "team": "스터디히어로",
       "members": "김이현 외 5명",
       "stack": "FastAPI, Nextjs, JavaScript, tailwindCSS, daisyUI, MySQL, AWS, Figma",
-      "description": " 당신의 공부를 도와줄 최고의 어플!",
+      "description": "당신의 공부를 도와줄 최고의 어플! 사람들과 실시간 채팅으로 소통하며 나만의 학습 루틴을 관리하고 공유하며 멘토를 찾고 스터디 모임을 가지며 최고의 맞춤 학습 플랜을 만들어보세요!",
       "imageUrl": "/images/projectThumb/thumb_스터디히어로.png",
       "field": "앱",
       "gitUrl": "https://github.com/Dongguk-Developer/chattingfront"

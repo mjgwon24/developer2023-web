@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import kakaoLogo from '../images/backgroundAndPicture/kakao_logo.png';
 import paperPlaneImage from '../images/backgroundAndPicture/paper_plane.png';
 import chatIconImage from '../images/backgroundAndPicture/chat_icon.png';
-import '../css/joinwidget.css';
+
 
 /**
  * ContactWidget
@@ -15,7 +15,7 @@ const JoinWidget = ({ onClose }) => {
     const cardRef = useRef(null);
 
     const currentMonth = new Date().getMonth() + 1;
-    const isJoinPeriod = currentMonth === 11 || currentMonth === 1;
+    const isJoinPeriod = true;
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -35,11 +35,11 @@ const JoinWidget = ({ onClose }) => {
             {isJoinPeriod ? (
                 <>
                     <div className="display-flex-column align-items-center gap-2r">
-                        <img src={chatIconImage} alt="Chat Icon" className="width-80 height-80"/>
+                        <img src={chatIconImage} alt="Chat Icon" className="on-collecting-chat-icon"/>
 
                         <div className="display-flex-column align-items-center gap-1r">
-                            <h2 className="weight-700 font-size-28">부원 모집 중 이에요!</h2>
-                            <p className="color-deep-gray font-size-18 line-height-1d5">
+                            <h2 className="on-collecting-title">부원 모집 중 이에요!</h2>
+                            <p className="line-height-1d5 on-collecting-subtitle">
                                 저희는 언제나 여러분을 기다리고 있습니다.<br/>
                                 함께 즐거운 개발 여정에 참여하고 싶으시다면,<br/>
                                 주저하지 말고 아래 연락처나 카카오 오픈 채팅으로 연락 주세요!
@@ -47,8 +47,8 @@ const JoinWidget = ({ onClose }) => {
                         </div>
 
                         <div className="display-flex-column align-items-center gap-1d5r">
-                            <div className="width100 bg-lightgray padding15-0 radius-12 display-flex justify-center box-shadow">
-                                <p className="weight-600 color-deep-gray">010-5109-0625</p>
+                            <div className="on-collecting-phonenumber">
+                                <p>010-5109-0625</p>
                             </div>
                             <a
                                 href="https://open.kakao.com/o/spWt0I8g"
@@ -56,7 +56,7 @@ const JoinWidget = ({ onClose }) => {
                                 rel="noopener noreferrer"
                                 className="kakao-button"
                             >
-                                <img src={kakaoLogo} alt="KakaoTalk" className="kakao-icon"/>
+                                <img src={kakaoLogo} alt="KakaoTalk" className="kakao-icon on-collecting-kakao-icon"/>
                                 카카오톡으로 문의하기
                             </a>
                         </div>

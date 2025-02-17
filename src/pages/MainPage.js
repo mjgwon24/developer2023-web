@@ -8,7 +8,7 @@ import Progress from "../components/Progress";
 
 const MainPage = () => {
     return (
-        <div>
+        <div className='mainpage'>
             <MainBanner />
             <MainContainer>
                 <About />

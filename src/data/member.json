@@ -3,6 +3,7 @@
   "season1": [
     {
       "teamName": "POQ",
+      "teamId":0,
       "members": [
         { "id": 1, "memberName": "전상은", "memberRole": ["BackEnd", "PM"], "githubUrl": "https://github.com/wowddok99",  "thumbnail": "season1/전상은.png" },
         { "id": 2, "memberName": "김민성", "memberRole": "DB", "thumbnail": "season1/김민성.png" },
@@ -13,6 +14,7 @@
     },
     {
       "teamName": "Memo APP",
+      "teamId":1,
       "members": [
         { "id": 6, "memberName": "김원",   "memberRole": "PM", "githubUrl": "https://github.com/Hwajinpo",  "thumbnail": "season1/김원.png" },
         { "id": 7, "memberName": "권민지", "memberRole": ["FrontEnd","BackEnd"], "githubUrl": "https://github.com/mjgwon24",  "thumbnail": "season1/권민지.png" },
@@ -23,6 +25,7 @@
     },
     {
       "teamName": "ShoppingMall",
+      "teamId":2,
       "members": [
         { "id": 11, "memberName": "박찬엽", "memberRole": "PM", "thumbnail": "season1/박찬엽.png" },
         { "id": 12, "memberName": "김진수", "memberRole": "DB", "githubUrl": "https://github.com/Jin-su-1",  "thumbnail": "season1/김진수.png" },
@@ -35,6 +38,7 @@
     },
     {
       "teamName": "Game & AI",
+      "teamId":3,
       "members": [
         { "id": 18, "memberName": "박근태", "memberRole": ["PM","FrontEnd","BackEnd"], "thumbnail": "season1/박근태.png" },
         { "id": 19, "memberName": "홍승민", "memberRole": ["BackEnd","Design"], "thumbnail": "season1/홍승민.png" },
@@ -48,6 +52,7 @@
     },
     {
       "teamName": "Stack UP",
+      "teamId":4,
       "members": [
         { "id": 26, "memberName": "이규원", "memberRole": ["Security","Firmware Auditing"], "githubUrl": "https://github.com/Gyuwon-Yonsei-CPSS /", "otherLink": "https://sites.google.com/view/leegyuwon", "thumbnail": "season2/이규원.png" }
       ]
@@ -55,7 +60,8 @@
   ],
   "season2": [
     {
-      "teamName": "Study  Hero",
+      "teamName": "Study Hero",
+      "teamId":5,
       "projectId" : 3,
       "members": [
         { "id": 28, "memberName": "김이현", "memberRole": ["PM","Full Stack", "Server"], "githubUrl": "https://github.com/lh7721004",  "thumbnail": "season2/김이현.png",
@@ -72,6 +78,7 @@
     },
     {
       "teamName": "스택네컷",
+      "teamId":6,
       "projectId": 2,
       "members": [
         { "id": 42, "memberName": "권민지", "memberRole": ["PM", "Front", "Back", "Design"], "githubUrl": "https://github.com/mjgwon24",  "thumbnail": "season2/권민지.png",
@@ -91,6 +98,7 @@
 
     {
       "teamName": "AI",
+      "teamId":7,
       "members": [
         { "id": 49, "memberName": "전형주", "memberRole": "AI", "githubUrl": "https://github.com/kavu-multi",  "thumbnail": "season2/전형주.png" },
         { "id": 50, "memberName": "임찬빈", "memberRole": "AI", "thumbnail": "season2/임찬빈.png" },
@@ -103,6 +111,7 @@
     },
     {
       "teamName": "금장어때",
+      "teamId":8,
       "projectId" : 4,
       "members": [
         { "id": 56, "memberName": "김주찬", "memberRole": ["PM","Front","Back"], "githubUrl": "https://github.com/jc0818",  "thumbnail": "season2/김주찬.png",
@@ -117,6 +126,7 @@
     },
     {
       "teamName": "경주의 밤",
+      "teamId":9,
       "projectId" : 1,
         "members": [
           { "id": 60, "memberName": "권민지", "memberRole": ["Front","Back", "Design"], "githubUrl": "https://github.com/mjgwon24", "thumbnail": "season2/권민지.png",
@@ -131,6 +141,7 @@
     },
     {
       "teamName": "파이썬 알고리즘",
+      "teamId":10,
       "members": [
         { "id": 64, "memberName": "이태영", "memberRole": "AI", "githubUrl": "https://github.com/leetae04kr", "thumbnail": "season2/이태영.png" },
         { "id": 65, "memberName": "윤준서", "memberRole": "AI", "thumbnail": "season2/윤준서.png" },
