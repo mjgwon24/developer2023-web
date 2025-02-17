@@ -1,6 +1,0 @@
-.review-img {
-    width: 48px; /* 부모 크기에 맞춤 */
-    height: 48px; /* 부모 크기에 맞춤 */
-    object-fit: contain; /* 이미지를 잘리지 않게 표시 */
-
-}

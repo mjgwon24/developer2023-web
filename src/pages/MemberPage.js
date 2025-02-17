@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from "react-router-dom";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import memberData from '../data/member.json';
-import '../css/style.css';
-import '../css/practice.css';
-import '../css/memberpage.css';
+
 import { FaGithub, FaLink } from 'react-icons/fa';
 // import {}
 
@@ -26,6 +25,7 @@ const MemberPage = () => {
     const pageRef = useRef(null);
     const teamBoxRefs = useRef([]);
     const headerRef = useRef(null);
+    const location = useLocation();
 
     const totalMembers = memberData.season1.reduce((count, team) => count + team.members.length, 0)
         + memberData.season2.reduce((count, team) => count + team.members.length, 0);
@@ -84,10 +84,12 @@ const MemberPage = () => {
                     end: 'bottom 20%',
                     toggleActions: 'play none none reverse',
                     onEnter: () => {
-                        headerRef.current.style.pointerEvents = "auto"; // 클릭 가능
+                        if(headerRef.current)
+                            headerRef.current.style.pointerEvents = "auto"; // 클릭 가능
                     },
                     onLeave: () => {
-                        headerRef.current.style.pointerEvents = "none"; // 클릭 방지
+                        if(headerRef.current)
+                            headerRef.current.style.pointerEvents = "none"; // 클릭 방지
                     },
                 },
             }
@@ -115,13 +117,32 @@ const MemberPage = () => {
             );
         });
     }, [teams]);
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const targetId = params.get("teamId");
+        if(targetId) {
+            const targetElement = document.getElementById(targetId);
+            if(targetElement){
+                const yOffset = -100; // 스크롤 조정값 (예: -100px 위로 조정)
+                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = elementPosition + yOffset;
 
+                window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+
+                console.log("scroll success");
+            }
+            else{
+                console.log("scroll fail");
+            }
+        }
+    }, [teams, location.search]);
+    
     return (
         <div className="member-page" ref={pageRef}>
             <div className="display-flex-column align-items-center position-relative z-index-100" ref={headerRef}>
                 <div className="text-align-center padding-top-85">
-                    <h1 className="font-size-36 weight-700 color-white">MEMBER</h1>
-                    <p className="font-size-20 weight-500 color-white padding-top-20">
+                    <h1 className="weight-700 color-white member-title">MEMBER</h1>
+                    <p className="weight-500 color-white padding-top-20 member-discription">
                         <span className="highlight-total">총 {totalMembers}명</span>의 팀원들이 디벨로퍼와 함께했어요!
                     </p>
                 </div>
@@ -167,11 +188,12 @@ const MemberPage = () => {
                         key={index}
                         className="team-box"
                         ref={(el) => (teamBoxRefs.current[index] = el)}
+                        id={team.teamId}
                     >
                         <div className="team-header">
-                            <h3 className="weight-600 font-size-28 color-white">
+                            <h3 className="weight-600 teamName color-white">
                                 {team.teamName} <span
-                                className="weight-400 font-size-22 color-light-gray-second">{team.members.length}명</span>
+                                className="weight-400 teamMembers color-light-gray-second">{team.members.length}명</span>
                             </h3>
                             <div className="season-badge">
                                 {memberData.season1.includes(team) ? 'season1' : 'season2'}

@@ -4,8 +4,7 @@ import MainContainer from "../components/MainContainer";
 import projectData from "../data/project.json";
 import memberData from "../data/member.json"; // member.json 파일을 가져옵니다.
 import gitIcon from "../images/icon/git_icon.png";
-// import downloadIcon from "../images/icon/download_icon.png";
-import "../css/practice.css";
+
 
 /**
  * 프로젝트 상세 페이지
@@ -42,11 +41,6 @@ const ProjectDetailPage = () => {
         }
     };
 
-    // const handleDownloadClick = () => {
-    //     if (project && project.downloadUrl) {
-    //         window.open(project.downloadUrl, "_blank");
-    //     }
-    // };
 
     if (!project) {
         return (
@@ -62,28 +56,20 @@ const ProjectDetailPage = () => {
                 <div className="display-flex-column gap-2r">
                     <div className="display-flex-column gap-05r">
                         <div className="display-flex gap-2d5r">
-                            <h1 className="representative-color">{project.title}</h1>
+                            <h1 className="representative-color detail-page-project-title">{project.title}</h1>
                             <div className="display-flex gap-1r">
                                 <img
                                     src={gitIcon}
                                     alt="git"
-                                    className="hover-pointer"
-                                    style={{ width: "30px", height: "30px" }}
+                                    className="hover-pointer git-icon"
                                     onClick={handleGitClick}
                                 />
-                                {/*<img*/}
-                                {/*    src={downloadIcon}*/}
-                                {/*    alt="download"*/}
-                                {/*    className="hover-pointer"*/}
-                                {/*    style={{ width: "27px", height: "27px" }}*/}
-                                {/*    // onClick={handleDownloadClick}*/}
-                                {/*/>*/}
                             </div>
                         </div>
 
                         <div className="display-flex-end gap-05r">
-                            <p className="font-size-20 weight-600 color-white">{project.team} </p>
-                            <p className="font-size-18 weight-400 color-white">
+                            <p className="detail-page-team">{project.team} </p>
+                            <p className="detail-page-member">
                                 {projectMembers.map((member, index) => (
                                     <span key={member.id}>
                                         {member.memberName}
@@ -93,13 +79,13 @@ const ProjectDetailPage = () => {
                             </p>
                         </div>
                         <div className="display-flex gap-05r" style={{alignItems : "baseline"}}>
-                            <p className="font-size-20 weight-600 color-white">Stack </p>
-                            <p className="font-size-18 weight-400 color-white">{project.stack}</p>
+                            <p className="detail-page-stack-title">Stack </p>
+                            <p className="detail-page-stack">{project.stack}</p>
                         </div>
                     </div>
 
-                    <div style={{width: "800px"}}>
-                        <p className="font-size-18 weight-400" style={{color: "#D6D6D6", whiteSpace: "pre-line"}}>{project.description}</p>
+                    <div style={{width: "100%"}}>
+                        <p className="detail-page-description" style={{color: "#D6D6D6", whiteSpace: "pre-line"}}>{project.description}</p>
                     </div>
                 </div>
             </div>

@@ -13,12 +13,10 @@ const DetailContainer = ({ children }) => {
             {React.Children.map(children, (child) => {
                 let backgroundColor = "#000000"; // 기본 배경색
 
-                // 각 child의 타입에 따라 배경색을 변경
                 if (child.type && child.type.name === "ProjectIntroduce") {
                     backgroundColor = "#000000";
                 }
 
-                // 개별 child를 배경색을 가진 div로 감싸고, .main-container 스타일 유지
                 return (
                     <div style={{ backgroundColor }}>
                         <div className="detail-container">

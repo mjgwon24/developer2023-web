@@ -1,7 +1,6 @@
 import React from 'react';
 import memberData from '../data/member.json';
-import "../css/style.css";
-import "../css/projectreview.css"
+
 /**
  * ProjectReview 컴포넌트
  * @author 김진수
@@ -22,7 +21,7 @@ const ProjectReview = ({ projectId }) => {
     return (
         <div className="detail-container">
             <div className="text-align-center padding85-0">
-                <h2 className="font-size-36 weight-700" style={{ color: "#FFFFFF" }}>프로젝트 후기</h2>
+                <h2 className="project-review-title weight-700" style={{ color: "#FFFFFF" }}>프로젝트 후기</h2>
             </div>
             <div style={{ paddingBottom: '85px' }}>
                 {reviews.map((reviewer, index) => (
@@ -38,7 +37,7 @@ const ProjectReview = ({ projectId }) => {
                         <div className="review-content">
                             <h3 className="reviewer-name">
                             {reviewer.memberName}{" "}
-                                <span className="font-size-14 representative-color">
+                                <span className="reviewer-stack">
                                     {Array.isArray(reviewer.memberRole) ? reviewer.memberRole.join(', ') : reviewer.memberRole}
                                 </span>
                             </h3>

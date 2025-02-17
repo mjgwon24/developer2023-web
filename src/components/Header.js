@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import '../css/style.css';
-import '../css/header.css';
+
 import vectorRight from '../images/icon/vector_right_white.png';
 import { useLocation } from "react-router-dom";
 
@@ -93,7 +92,7 @@ const Header = ({ style = { background: "rgb(0 0 0)" }, onJoinClick }) => {
                             }}
                         >
                             <p className="color-white">가입하러 가기</p>
-                            <img src={vectorRight} className="width-12" alt="arrow icon" />
+                            <img src={vectorRight} className="arrow-icon" alt="arrow icon" />
                         </button>
                     </div>
                 </ul>

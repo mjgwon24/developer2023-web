@@ -8,7 +8,7 @@ import React, { useEffect, useRef } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import '../css/mainbanner.css';
+
 
 // ScrollTrigger 플러그인 등록
 gsap.registerPlugin(ScrollTrigger);

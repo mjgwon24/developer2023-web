@@ -24,18 +24,11 @@ const OtherProjects = () => {
     return (
         <div className="display-flex-column align-items-center width100 padding-bottom-100 gap-3r">
             <div className="display-flex-column align-items-center">
-                <p className="font-size-36 weight-700 color-white">디벨로퍼의 다른 프로젝트도 보고가세요!</p>
+                <p className="see-other-projects">디벨로퍼의 다른 프로젝트도 보고가세요!</p>
             </div>
 
             <div
-                className="project-list"
-                style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(4, 1fr)",
-                    rowGap: "50px",
-                    columnGap: "30px",
-                    justifyItems: "center",
-                }}
+                className="other-project-list"
             >
                 {projects.length > 0 ? (
                     projects.map((project, index) => (
