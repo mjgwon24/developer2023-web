@@ -9,7 +9,7 @@ import React from "react";
 
 const AboutContainer = ({ children }) => {
     return (
-        <div className="detail-container-outside">
+        <div className="pb-10 pt-20">
             {React.Children.map(children, (child) => {
                 let backgroundColor = "#000000"; // 기본 배경색
 
@@ -21,7 +21,7 @@ const AboutContainer = ({ children }) => {
                 // 개별 child를 배경색을 가진 div로 감싸고, .main-container 스타일 유지
                 return (
                     <div style={{ backgroundColor }}>
-                        <div className="detail-container">
+                        <div className="w-full max-w-7xl mx-auto">
                             {child}
                         </div>
                     </div>
