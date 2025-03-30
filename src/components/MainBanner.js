@@ -68,7 +68,7 @@ const MainBanner = () => {
                         개발을 통해 성장하는 우리들의 이야기
                     </p>
                     <div
-                        className="frank-800 text-6xl text-white ml-5 text-center md:text-left w-full">DEVELOPER
+                        className="frank-800 text-3xl md:text-6xl text-white ml-5 text-center md:text-left w-full">DEVELOPER
                     </div>
                 </div>
 

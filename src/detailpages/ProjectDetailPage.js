@@ -1,23 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import MainContainer from "../components/MainContainer";
 import projectData from "../data/project.json";
-import memberData from "../data/member.json"; // member.json 파일을 가져옵니다.
+import memberData from "../data/member.json";
 import gitIcon from "../images/icon/git_icon.png";
 
 
 /**
  * 프로젝트 상세 페이지
  * @since 2024.09.22
- * @lastmodified 2024.11.09
+ * @lastmodified 2025.03.30
  * @author 김진수
  */
 
 const ProjectDetailPage = () => {
     const { projectId } = useParams();
-    const projectIdNum = parseInt(projectId); // projectId를 숫자로 변환
+    const projectIdNum = parseInt(projectId);
+    const [imageLoading, setImageLoading] = useState(true);
 
-    // 모든 시즌을 탐색하여 해당 projectId를 가진 프로젝트를 찾습니다.
     let project = null;
     Object.values(projectData).forEach(seasonProjects => {
         if (!project) {
@@ -25,7 +25,6 @@ const ProjectDetailPage = () => {
         }
     });
 
-    // member.json 파일에서 해당 projectId를 가진 멤버들을 가져옵니다.
     const projectMembers = [];
     Object.values(memberData).forEach(season => {
         season.forEach(team => {
@@ -41,6 +40,9 @@ const ProjectDetailPage = () => {
         }
     };
 
+    const handleImageLoad = () => {
+        setImageLoading(false);
+    };
 
     if (!project) {
         return (
@@ -52,24 +54,29 @@ const ProjectDetailPage = () => {
 
     return (
         <>
-            <div className="padding60-0">
-                <div className="display-flex-column gap-2r">
-                    <div className="display-flex-column gap-05r">
-                        <div className="display-flex gap-2d5r">
-                            <h1 className="representative-color detail-page-project-title">{project.title}</h1>
-                            <div className="display-flex gap-1r">
-                                <img
-                                    src={gitIcon}
-                                    alt="git"
-                                    className="hover-pointer git-icon"
+            <div className="pb-4 md:py-12 md:w-[1000px]">
+                <div className="flex flex-col gap-8">
+                    <div className="flex flex-col">
+                        <div className="flex flex-row md:items-end justify-between pb-4 border-b border-gray-700">
+                            <h1 className="text-purple-500 text-4xl weight-600 mb-2 md:mb-0">{project.title}</h1>
+                            <div className="flex items-center">
+                                <button
                                     onClick={handleGitClick}
-                                />
+                                    className="flex items-center gap-2 bg-gray-700 hover:bg-gray-600 border border-gray-600 shadow-sm transition-all duration-300 py-2 px-4 rounded-lg"
+                                >
+                                    <img
+                                        src={gitIcon}
+                                        alt="GitHub"
+                                        className="w-5 h-5 opacity-90"
+                                    />
+                                    <span className="text-gray-100 text-sm font-medium tracking-wide">GitHub</span>
+                                </button>
                             </div>
                         </div>
 
-                        <div className="display-flex-end gap-05r">
-                            <p className="detail-page-team">{project.team} </p>
-                            <p className="detail-page-member">
+                        <div className="flex justify-start gap-2 mt-2">
+                            <p className="text-gray-300 weight-600">{project.team} </p>
+                            <p className="text-gray-400">
                                 {projectMembers.map((member, index) => (
                                     <span key={member.id}>
                                         {member.memberName}
@@ -78,14 +85,14 @@ const ProjectDetailPage = () => {
                                 ))}
                             </p>
                         </div>
-                        <div className="display-flex gap-05r" style={{alignItems : "baseline"}}>
-                            <p className="detail-page-stack-title">Stack </p>
-                            <p className="detail-page-stack">{project.stack}</p>
+                        <div className="flex items-baseline gap-2">
+                            <p className="text-gray-300 weight-600">Stack </p>
+                            <p className="text-gray-400">{project.stack}</p>
                         </div>
                     </div>
 
-                    <div style={{width: "100%"}}>
-                        <p className="detail-page-description" style={{color: "#D6D6D6", whiteSpace: "pre-line"}}>{project.description}</p>
+                    <div className="w-full">
+                        <p className="text-[#D6D6D6] whitespace-pre-line">{project.description}</p>
                     </div>
                 </div>
             </div>

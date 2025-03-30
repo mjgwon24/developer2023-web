@@ -135,7 +135,7 @@ const Header = ({ style = { background: "rgb(0 0 0)" }, onJoinClick }) => {
                 </div>
 
                 {isMenuOpen && (
-                    <div className="md:hidden absolute left-0 right-0 top-full mt-2 bg-black bg-opacity-95 rounded-lg shadow-lg py-4 px-4 z-50 transition-all duration-300 border-b border-gray-800">
+                    <div className="md:hidden absolute left-0 right-0 top-full bg-black bg-opacity-95 rounded-lg shadow-lg py-4 px-4 z-50 transition-all duration-300 border-b border-gray-800">
                         <ul className="flex flex-col space-y-4">
                             {[
                                 { path: '/about', label: 'About' },

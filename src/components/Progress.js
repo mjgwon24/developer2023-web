@@ -29,6 +29,7 @@ const Progress = () => {
         return "pc";
 
     };
+
     const handleStackUpClick = () => {
         window.open(
             "https://stack-up.notion.site/STACK-UP-HOME-bec5a8d5c19e42588054614f874b9571?pvs=74",
@@ -46,9 +47,9 @@ const Progress = () => {
          // 애니메이션 설정
          const animationConfig = {
              mobile: {
-                text: { start: "top 0%", end: "bottom 0%", },
-                stackUp: { start: "top 200%", end: "bottom 0%", },
-                softCat: { start: "top 195%", end: "bottom 5%", },
+                 text: { start: "top 80%", end: "bottom 20%", },
+                 stackUp: { start: "top 80%", end: "bottom 20%" },
+                 softCat: { start: "top 75%", end: "bottom 25%", },
              },
              tablet: {
                 text: { start: "top 80%", end: "bottom 20%", },
@@ -61,8 +62,17 @@ const Progress = () => {
                 softCat: { start: "top 75%", end: "bottom 25%", },
              },
          };
-         const config = animationConfig[deviceType];
-        gsap.fromTo(
+
+        const config = animationConfig[deviceType];
+
+        // // 이전 애니메이션 정리
+        // const cleanupAnimations = () => {
+        //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        // };
+        //
+        // cleanupAnimations();
+
+         gsap.fromTo(
             textRef.current,
             { opacity: 0, y: 30 },
             {
@@ -80,38 +90,52 @@ const Progress = () => {
 
         gsap.fromTo(
             stackUpRef.current,
-            { opacity: 0, x: -50 },
+            { opacity: 0, y: 30 },
             {
                 opacity: 1,
-                x: 0,
+                y: 0,
                 duration: 2,
                 ease: "power3.out",
+                immediateRender: false,
                 scrollTrigger: {
                     trigger: stackUpRef.current,
                     start: config.stackUp.start,
                     toggleActions: "play none none reverse",
-                    
                 },
             }
         );
 
         gsap.fromTo(
             softCatRef.current,
-            { opacity: 0, x: 50 },
+            { opacity: 0, y: 30 },
             {
                 opacity: 1,
-                x: 0,
+                y: 0,
                 duration: 2,
                 ease: "power3.out",
+                immediateRender: false,
                 scrollTrigger: {
                     trigger: softCatRef.current,
                     start: config.softCat.start,
                     toggleActions: "play none none reverse",
-                    
                 },
             }
         );
-    }, []);
+
+        // // 창 크기 변경 이벤트 리스너
+        // const handleResize = () => {
+        //     const newDeviceType = getDeviceType();
+        //     if (newDeviceType !== deviceType) {
+        //         setDeviceType(newDeviceType);
+        //     }
+        // };
+
+        // window.addEventListener('resize', handleResize);
+        // return () => {
+        //     window.removeEventListener('resize', handleResize);
+        //     cleanupAnimations();
+        // };
+    }, [deviceType]);
 
     return (
         <div className="flex flex-col items-center pb-40 py-20">

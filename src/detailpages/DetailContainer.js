@@ -9,7 +9,7 @@ import React from "react";
 
 const DetailContainer = ({ children }) => {
     return (
-        <div className="detail-container-outside">
+        <div className="flex flex-col items-center w-full pt-24 md:pt-40 pb-20">
             {React.Children.map(children, (child) => {
                 let backgroundColor = "#000000"; // 기본 배경색
 
@@ -19,7 +19,7 @@ const DetailContainer = ({ children }) => {
 
                 return (
                     <div style={{ backgroundColor }}>
-                        <div className="detail-container">
+                        <div className="md:w-[1000px]">
                             {child}
                         </div>
                     </div>

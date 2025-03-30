@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';  // useParams를 가져옵니다.
+import { useParams } from 'react-router-dom';
 import ProjectDetailPage from "../detailpages/ProjectDetailPage";
 import DetailContainer from "../detailpages/DetailContainer";
 import ProjectIntroduce from "../detailpages/ProjectIntroduce";
@@ -14,15 +14,15 @@ import OtherProjects from "./OtherProjects";
  */
 
 const DetailPage = () => {
-    const { projectId } = useParams(); // 현재 URL에서 projectId를 가져옵니다.
+    const { projectId } = useParams();
     const projectIdNum = parseInt(projectId);
 
     return (
-        <div>
+        <div className="md:px-0 px-3">
             <DetailContainer>
                 <ProjectDetailPage />
                 <ProjectIntroduce />
-                <ProjectReview projectId={projectIdNum} />  {/* projectId를 전달합니다 */}
+                <ProjectReview projectId={projectIdNum} />
                 <OtherProjects />
             </DetailContainer>
         </div>

@@ -107,7 +107,7 @@ function About() {
     }, []);
 
     return (
-        <div className="py-20">
+        <div className="py-20 md:px-8 px-4">
             <div className="flex flex-col items-center">
                 <h2 className="text-2xl md:text-3xl weight-600 text-white content-center"
                     ref={(el) => textRefs.current.push(el)}>

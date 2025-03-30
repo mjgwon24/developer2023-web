@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 /**
  * ProjectPage 컴포넌트
  * @since 2024.9.26
- * @lastmodified 2024.12.08
+ * @lastmodified 2025.03.30
  */
 const Project = () => {
     const [projects, setProjects] = useState([]);
@@ -25,6 +25,7 @@ const Project = () => {
 
     const [MoveEvent, setEvent] = useState(false);
     const [MoveEventReverse, setEventReverse] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const nextImage = () => {
         setEvent(true);
@@ -78,6 +79,7 @@ const Project = () => {
         filteredProjects.reverse();
         setProjects(Array.from({ length: 3 }, () => filteredProjects.slice(-1 * projectCount)).flat());
         setCards(getMiddleSlice(projects, 3));
+        setTimeout(() => setLoading(false), 3500);
     }, [projectsData]);
 
     useEffect(() => {
@@ -167,12 +169,44 @@ const Project = () => {
             </div>
             <div className="flex flex-col w-full max-w-5xl px-7 project-cards mx-auto">
                 <div className={`flex flex-col md:flex-row items-center md:justify-center gap-10 min-h-[460px] ${MoveEvent ? "l-effect" : ""} ${MoveEventReverse ? "r-effect" : ""}`}>
-                    {cards.map((project, index) => (
-                        <div key={index} className={`flex flex-col justify-center items-center 
-                        ${index === 1 ? 'transform md:scale-125 md:w-1/4' : 'md:w-1/4 transform md:scale-90'}`}>
-                            <ProjectCardBox project={project} moveEvent={MoveEvent} moveEventReverse={MoveEventReverse} index={index} type="MainPage" />
-                        </div>
-                    ))}
+                    {loading ? (
+                        // 스켈레톤 UI
+                        Array.from({ length: 3 }).map((_, index) => (
+                            <div
+                                key={index}
+                                className={`flex flex-col justify-center items-center 
+                                ${index === 1 ? 'transform md:scale-125 md:w-1/4' : 'md:w-1/4 transform md:scale-90'}`}
+                            >
+                                <div className="w-full h-[300px] bg-gray-800 rounded-lg overflow-hidden">
+                                    <div className="animate-pulse">
+                                        <div className="h-[180px] bg-gray-700"></div>
+                                        <div className="p-4">
+                                            <div className="h-4 bg-gray-700 rounded w-3/4 mb-4"></div>
+                                            <div className="h-3 bg-gray-700 rounded w-1/2 mb-2"></div>
+                                            <div className="h-3 bg-gray-700 rounded w-full"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    ) : (
+                        // 실제 카드 컴포넌트
+                        cards.map((project, index) => (
+                            <div
+                                key={index}
+                                className={`flex flex-col justify-center items-center 
+                                ${index === 1 ? 'transform md:scale-125 md:w-1/4' : 'md:w-1/4 transform md:scale-90'}`}
+                            >
+                                <ProjectCardBox
+                                    project={project}
+                                    moveEvent={MoveEvent}
+                                    moveEventReverse={MoveEventReverse}
+                                    index={index}
+                                    type="MainPage"
+                                />
+                            </div>
+                        ))
+                    )}
                 </div>
             </div>
 
