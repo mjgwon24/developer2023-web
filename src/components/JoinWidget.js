@@ -7,7 +7,7 @@ import chatIconImage from '../images/backgroundAndPicture/chat_icon.png';
 /**
  * ContactWidget
  * @since 2024.10.10
- * @modified 2024.11.26
+ * @modified 2025.03.30
  * @author 임석진
  */
 
@@ -31,32 +31,32 @@ const JoinWidget = ({ onClose }) => {
     }, [onClose]);
 
     return (
-        <div ref={cardRef} className="card-container">
+        <div ref={cardRef} className="flex flex-col items-center p-6 bg-white rounded-lg shadow-lg z-1000">
             {isJoinPeriod ? (
                 <>
-                    <div className="display-flex-column align-items-center gap-2r">
-                        <img src={chatIconImage} alt="Chat Icon" className="on-collecting-chat-icon"/>
+                    <div className="flex flex-col items-center gap-4 md:gap-8">
+                        <img src={chatIconImage} alt="Chat Icon" className="md:w-16 md:h-16 w-12 h-12"/>
 
-                        <div className="display-flex-column align-items-center gap-1r">
-                            <h2 className="on-collecting-title">부원 모집 중 이에요!</h2>
-                            <p className="line-height-1d5 on-collecting-subtitle">
+                        <div className="flex flex-col items-center gap-2 md:gap-4">
+                            <h2 className="text-2xl weight-600">부원 모집 중 이에요!</h2>
+                            <p className="leading-6 text-center">
                                 저희는 언제나 여러분을 기다리고 있습니다.<br/>
                                 함께 즐거운 개발 여정에 참여하고 싶으시다면,<br/>
                                 주저하지 말고 아래 연락처나 카카오 오픈 채팅으로 연락 주세요!
                             </p>
                         </div>
 
-                        <div className="display-flex-column align-items-center gap-1d5r">
-                            <div className="on-collecting-phonenumber">
+                        <div className="flex flex-col items-center gap-6">
+                            <div className="text-xl weight-600">
                                 <p>010-5109-0625</p>
                             </div>
                             <a
                                 href="https://open.kakao.com/o/spWt0I8g"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="kakao-button"
+                                className="flex items-center gap-2 px-4 py-2 bg-yellow-300 rounded-lg weight-500"
                             >
-                                <img src={kakaoLogo} alt="KakaoTalk" className="kakao-icon on-collecting-kakao-icon"/>
+                                <img src={kakaoLogo} alt="KakaoTalk" className="w-6 h-6"/>
                                 카카오톡으로 문의하기
                             </a>
                         </div>
@@ -64,16 +64,16 @@ const JoinWidget = ({ onClose }) => {
                 </>
             ) : (
                 <>
-                    <img src={paperPlaneImage} alt="Paper Plane" className="icon-image"/>
-                    <div className="display-flex-column align-items-center gap-1r">
-                        <h2 className="weight-700 font-size-28">지금은 모집 기간이 아니에요!</h2>
-                        <p className="color-deep-gray font-size-18 line-height-1d5">
+                    <img src={paperPlaneImage} alt="Paper Plane" className="w-16 h-16"/>
+                    <div className="flex flex-col items-center gap-4">
+                        <h2 className="text-2xl font-bold">지금은 모집 기간이 아니에요!</h2>
+                        <p className="text-lg text-gray-600 leading-6 text-center">
                             모집 기간이 궁금하시다면 문의를 해 주세요.
                         </p>
                     </div>
                 </>
             )}
-            <button className="close-button" onClick={onClose}>X</button>
+            <button className="absolute top-2 right-2 text-xl" onClick={onClose}>X</button>
         </div>
     );
 };
