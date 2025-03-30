@@ -8,6 +8,7 @@
 
 import React, {useEffect, useRef, useState} from "react";
 
+import hackertonImg2_1 from '../../images/achievements/hackerton2_1.png';
 import hackertonImg2_2 from '../../images/achievements/hackerton2_2.png';
 import hackertonImg1_1 from '../../images/achievements/hackerton1_1.png';
 import hackertonImg1_2 from '../../images/achievements/hackerton1_2.png';
@@ -97,7 +98,7 @@ function AboutAchievement() {
 
             <div className="flex flex-col items-center pb-15">
                 <div className="flex flex-col md:flex-row p-5">
-                    <img src={hackertonImg2_2} className="w-[500px] rounded-xl p-5"
+                    <img src={hackertonImg2_1} className="w-[500px] rounded-xl p-5"
                          alt="2024 경주 지역문제해결 해커톤 최우수상"
                          ref={(el) => textRefs.current.push(el)}/>
                     <img src={hackertonImg2_2} className="w-[500px] rounded-xl p-5"
