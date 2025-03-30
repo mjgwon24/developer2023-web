@@ -60,7 +60,7 @@ const MainBanner = () => {
     }, []);
 
     return (
-        <div className="w-full min-h-[80vh] flex flex-col justify-center items-center md:flex-row bg-black">
+        <div className="w-full min-h-[60vh] md:min-h-[80vh] flex flex-col justify-center items-center md:flex-row bg-black">
             <div
                 className="flex flex-col justify-center items-center md:justify-between md:w-[1220px] md:flex-row bg-black">
                 <div className="w-full md:w-1/2 flex flex-col justify-center items-center p-8" ref={text2Ref}>
@@ -68,7 +68,7 @@ const MainBanner = () => {
                         개발을 통해 성장하는 우리들의 이야기
                     </p>
                     <div
-                        className="frank-800 text-4xl md:text-6xl font-bold text-white ml-5 text-center md:text-left w-full">DEVELOPER
+                        className="frank-800 text-6xl text-white ml-5 text-center md:text-left w-full">DEVELOPER
                     </div>
                 </div>
 
