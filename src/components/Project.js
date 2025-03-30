@@ -114,8 +114,8 @@ const Project = () => {
                     duration: 1.5,
                     scrollTrigger: {
                         trigger: projectCards,
-                        start: "top 90%",
-                        end: "bottom 30%",
+                        start: "top 75%",
+                        end: "bottom 25%",
                         toggleActions: "play none none reverse",
                     },
                 }
@@ -132,8 +132,8 @@ const Project = () => {
                     duration: 1.5,
                     scrollTrigger: {
                         trigger: projectLink,
-                        start: "top 90%",
-                        end: "bottom 35%",
+                        start: "top 75%",
+                        end: "bottom 25%",
                         toggleActions: "play none none reverse",
                     },
                 }

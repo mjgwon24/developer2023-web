@@ -114,68 +114,63 @@ const Progress = () => {
     }, []);
 
     return (
-        <div className="display-flex-column align-items-center padding85-0 progess justify-center" style={{width:"100%"}}>
-            <div ref={textRef} className="font-size-36 weight-700 color-white">
+        <div className="flex flex-col items-center pb-40 py-20">
+            <h2 className="text-center text-2xl md:text-3xl weight-600 text-white md:mb-10 mb-1">
                 저희는 계속해서 발전하는 중이에요!
-            </div>
+            </h2>
 
-            <div className="content" ref={stackUpRef} >{/* style={{width: "1050px"}} */}
-                <div className="progress-image-container">
-                    <div className="image-placeholder">
-                        <img src={stack_up} alt="Stack Up" className="imac-image" />
+            <div className="flex flex-col md:flex-row items-center md:items-end justify-center md:justify-between md:w-[800px] max-w-6xl mb-1 md:mb-4" ref={stackUpRef}>
+                <div className="w-full p-2">
+                    <div className="rounded-lg overflow-hidden">
+                        <img src={stack_up} alt="Stack Up" className="w-full object-cover" />
                     </div>
                 </div>
 
-                <div>
-                    <div className="progress-text-container progress-text-align-right">
-                        <p className="weight-600 color-white margin-bottom-10 subscription"># 열정으로 빚어진 크루</p>
-                        <p className="representative-color weight-600 color-white margin-bottom-10 subscription">
-                            # 스택-업
-                        </p>
-                        <p className="weight-600 color-white margin-bottom-10 subscription"># 너의 실력도 업</p>
-                        <p className="weight-600 color-white margin-bottom-10 subscription"># 멘토 & 멘티 활동</p>
-                        <p className="weight-600 color-white margin-bottom-10 subscription"># 알고리즘 스터디</p>
+                <div className="flex flex-col items-center md:items-end justify-center w-full md:w-1/2 p-4">
+                    <div className="flex flex-col justify-center gap-1 text-center md:text-right mb-6 text-white text-xl md:text-2xl weight-500">
+                        <p># 열정으로 빚어진 크루</p>
+                        <p className="text-purple-500 weight-600"># 스택-업</p>
+                        <p># 너의 실력도 업</p>
+                        <p># 멘토 & 멘티 활동</p>
+                        <p># 알고리즘 스터디</p>
                     </div>
 
                     <div
-                        className="progress-logo-button"
-                        style={{width: "280px", height: "60px"}}
+                        className="flex items-center justify-center p-3 mb-4 bg-white bg-opacity-10 rounded-lg cursor-pointer hover:bg-opacity-20 transition-all duration-300 w-[280px] h-[60px]"
                         onClick={handleStackUpClick}
                     >
-                        <div className="progress-button-content" style={{marginRight: "5px"}}>
-                            <img src={stack_up_mark} alt="StackUp Logo" className="stack-up-logo-image"/>
-                            <p className="weight-700 font-size-18">더 알고 싶다면 <span className="representative-color">CLICK!</span>
-                            </p>
+                        <div className="flex items-center weight-600 mr-1.5">
+                            <img src={stack_up_mark} alt="StackUp Logo" className="h-8 mr-2"/>
+                            <p className="md:text-lg text-white">더 알고 싶다면 <span className="text-purple-500">CLICK!</span></p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="content reverse" ref={softCatRef}>
-                <div className="progress-image-container">
-                    <div className="image-placeholder">
-                        <img src={soft_cat} alt="Stack Up" className="imac-image"/>
-                    </div>
-                </div>
-
-                <div style={{marginLeft: "50px"}}>
-                    <div className="progress-text-container progress-text-align-left">
-                        <p className="weight-600 color-white margin-bottom-10 subscription"># 창업 동아리</p>
-                        <p className="weight-600 color-white margin-bottom-10 subscription"># 열정과 끈기</p>
-                        <p className="softcat-color weight-600 margin-bottom-10 subscription"># 소프트 캣</p>
-                        <p className="weight-600 color-white margin-bottom-10 subscription"># 꿈을 현실로!</p>
-                        <p className="weight-600 color-white margin-bottom-10 subscription"># 실전 경험치 한가득</p>
+            <div className="flex flex-col-reverse md:flex-row items-center justify-between md:w-[800px] max-w-6xl mb-16" ref={softCatRef}>
+                <div className="flex flex-col items-center md:items-start w-full md:w-1/2 p-4">
+                    <div className="flex flex-col gap-1 text-center md:text-left mb-6 text-white text-xl md:text-2xl weight-500">
+                        <p># 창업 동아리</p>
+                        <p># 열정과 끈기</p>
+                        <p className="text-blue-600 weight-600"># 소프트 캣</p>
+                        <p># 꿈을 현실로!</p>
+                        <p># 실전 경험치 한가득</p>
                     </div>
 
                     <div
-                        className="progress-logo-button"
-                        style={{width: "300px", height: "63px"}}
+                        className="flex items-center justify-center p-3 bg-white bg-opacity-10 rounded-lg cursor-pointer hover:bg-opacity-20 transition-all duration-300 w-[300px] h-[63px]"
                         onClick={handleSoftCatClick}
                     >
-                        <div className="display-flex align-items-center justify-center padding-right-5" style={{marginRight: "5px"}}>
-                            <img src={soft_cat_mark} alt="SoftCat Logo" className="soft-cat-logo-image"/>
-                            <p className="weight-700 font-size-18">더 알고 싶다면 <span className="softcat-color">CLICK!</span></p>
+                        <div className="flex items-center justify-center weight-600 pr-1.5 mr-1.5">
+                            <img src={soft_cat_mark} alt="SoftCat Logo" className="h-6 mr-2"/>
+                            <p className="md:text-lg text-white">더 알고 싶다면 <span className="text-blue-600">CLICK!</span></p>
                         </div>
+                    </div>
+                </div>
+
+                <div className="w-full p-2">
+                    <div className="rounded-lg overflow-hidden">
+                        <img src={soft_cat} alt="SoftCat" className="w-full object-cover"/>
                     </div>
                 </div>
             </div>

@@ -8,14 +8,16 @@ import Progress from "../components/Progress";
 
 const MainPage = () => {
     return (
-        <div className='mainpage'>
-            <MainBanner />
-            <MainContainer>
-                <About />
-                <Team />
-                <Project />
-                <Progress />
-            </MainContainer>
+        <div className="w-full min-h-screen bg-black overflow-x-hidden">
+            <div className="mx-auto">
+                <MainBanner />
+                <MainContainer>
+                    <About />
+                    <Team />
+                    <Project />
+                    <Progress />
+                </MainContainer>
+            </div>
         </div>
     );
 };

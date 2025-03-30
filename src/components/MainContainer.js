@@ -20,11 +20,11 @@ const MainContainer = ({ children }) => {
                 if (child.type === About) {
                     backgroundColor = "#151515";
                 } else if (child.type === Team) {
-                    backgroundColor = "#131313";
+                    backgroundColor = "#000000";
                 } else if (child.type === Project) {
                     backgroundColor = "#151515";
                 } else if (child.type === Progress) {
-                    backgroundColor = "#131313";
+                    backgroundColor = "#000000";
                 }
 
                 return (

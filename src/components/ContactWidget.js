@@ -27,30 +27,30 @@ const ContactWidget = () => {
 
     return (
         <>
-            <div className="ContactWidgetButton" onClick={toggleCardVisibility}>
-                <FontAwesomeIcon icon={faEnvelope} className="ContactMailIcon" />
-            </div>
+            {/*<div className="ContactWidgetButton" onClick={toggleCardVisibility}>*/}
+            {/*    <FontAwesomeIcon icon={faEnvelope} className="ContactMailIcon" />*/}
+            {/*</div>*/}
 
-            {isCardVisible && (
-                <div ref={cardRef} className="ContactCardContainer">
-                    <h2 className="ContactHeader">문의하기</h2>
-                    <p className="ContactDescription">문의사항이 있으실 경우 아래로 연락 주세요!</p>
-                    <div className="ContactContactBox">
-                        <FontAwesomeIcon icon={faPhoneAlt} className="ContactConstactIcon" />
-                        <span className="ContactContactText">010-5109-0625</span>
-                    </div>
-                    <a
-                        href="https://open.kakao.com/o/spWt0I8g"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className='ContactKakaoButton'
-                    >
-                        <img src={kakaoLogo} alt="KakaoTalk" className="ContactKakaoIcon" />
-                        카카오톡으로 문의하기
-                    </a>
-                    <button className="ContactCloseButton" onClick={toggleCardVisibility}>X</button>
-                </div>
-            )}
+            {/*{isCardVisible && (*/}
+            {/*    <div ref={cardRef} className="ContactCardContainer">*/}
+            {/*        <h2 className="ContactHeader">문의하기</h2>*/}
+            {/*        <p className="ContactDescription">문의사항이 있으실 경우 아래로 연락 주세요!</p>*/}
+            {/*        <div className="ContactContactBox">*/}
+            {/*            <FontAwesomeIcon icon={faPhoneAlt} className="ContactConstactIcon" />*/}
+            {/*            <span className="ContactContactText">010-5109-0625</span>*/}
+            {/*        </div>*/}
+            {/*        <a*/}
+            {/*            href="https://open.kakao.com/o/spWt0I8g"*/}
+            {/*            target="_blank"*/}
+            {/*            rel="noopener noreferrer"*/}
+            {/*            className='ContactKakaoButton'*/}
+            {/*        >*/}
+            {/*            <img src={kakaoLogo} alt="KakaoTalk" className="ContactKakaoIcon" />*/}
+            {/*            카카오톡으로 문의하기*/}
+            {/*        </a>*/}
+            {/*        <button className="ContactCloseButton" onClick={toggleCardVisibility}>X</button>*/}
+            {/*    </div>*/}
+            {/*)}*/}
         </>
     );
 };
