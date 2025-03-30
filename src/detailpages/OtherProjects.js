@@ -16,27 +16,27 @@ const OtherProjects = () => {
                 });
             });
 
-        allProjects = allProjects.slice(0, 4);
+        allProjects = allProjects.slice(0, 3);
 
         setProjects(allProjects);
     }, []);
 
     return (
-        <div className="display-flex-column align-items-center width100 padding-bottom-100 gap-3r">
-            <div className="display-flex-column align-items-center">
-                <p className="see-other-projects">디벨로퍼의 다른 프로젝트도 보고가세요!</p>
+        <div className="flex flex-col justify-center w-full md:w-[1000px] pb-40">
+            <div className="flex flex-col items-center pt-20 pb-12">
+                <p className="text-2xl md:text-3xl weight-600 text-white">디벨로퍼의 다른 프로젝트도 보고가세요!</p>
             </div>
 
             <div
-                className="other-project-list"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full"
             >
                 {projects.length > 0 ? (
                     projects.map((project, index) => (
                         <ProjectCardBox key={index} project={project} type="DetailPage"/>
                     ))
                 ) : (
-                    <div className="display-flex justify-center width100 height100" style={{ gridColumn: "1 / -1" }}>
-                        <p className="color-light-gray-second align-center">
+                    <div className="flex justify-center w-full h-full" style={{ gridColumn: "1 / -1" }}>
+                        <p className="text-gray-400 text-center">
                             프로젝트가 아직 없어요
                         </p>
                     </div>

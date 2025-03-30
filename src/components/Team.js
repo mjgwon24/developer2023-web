@@ -1,199 +1,227 @@
- /**
-  * ContactWidget
-  * @since 2024.9.12
-  * @author 임석진
-  */
+import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import memberData from "../data/member.json";
 
- import React, { useEffect, useRef, useState } from "react";
- import { Link } from "react-router-dom";
- import { gsap } from "gsap";
- import { ScrollTrigger } from "gsap/ScrollTrigger";
- import memberData from "../data/member.json";
+gsap.registerPlugin(ScrollTrigger);
 
+/**
+ * Team 컴포넌트
+ * @since 2024.9.12
+ * @lastmodified 2025.03.30
+ * @author 임석진, 권민지
+ */
+const Team = () => {
+    const [season, setSeason] = useState("season2");
+    const [teams, setTeams] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const sectionRef = useRef(null);
+    const headerRef = useRef(null);
+    const totalMembersRef = useRef(null);
+    const seasonRef = useRef(null);
+    const linkRefs = useRef([]);
+    const [deviceType, setDeviceType] = useState("");
 
- gsap.registerPlugin(ScrollTrigger);
+    const totalMembers =
+        memberData["season1"].reduce((acc, team) => acc + team.members.length, 0) +
+        memberData["season2"].reduce((acc, team) => acc + team.members.length, 0);
 
- const Team = () => {
-     const [season, setSeason] = useState("season2");
-     const [teams, setTeams] = useState([]);
-     const sectionRef = useRef(null);
-     const headerRef = useRef(null);
-     const totalMembersRef = useRef(null);
-     const seasonRef = useRef(null);
-     const linkRefs = useRef([]);
-     const [deviceType,setDeviceType] = useState("");
-
-     const totalMembers =
-         memberData["season1"].reduce((acc, team) => acc + team.members.length, 0) +
-         memberData["season2"].reduce((acc, team) => acc + team.members.length, 0);
     const getDeviceType = () => {
         const width = window.innerWidth;
         const height = window.innerHeight;
         if (width < height) return "mobile";
         if (width > 768 && width <= 1023) return "tablet";
         return "pc";
-
     };
-     useEffect(() => {
-         if (season === "season1") {
-             setTeams(memberData["season1"]);
-         } else {
-             setTeams(memberData["season2"]);
-         }
-     }, [season]);
 
-     useEffect(() => {
-        const deviceType = getDeviceType();
-         setDeviceType(deviceType);
-         const animationConfig = {
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 2000);
+
+        if (season === "season1") {
+            setTeams(memberData["season1"]);
+        } else {
+            setTeams(memberData["season2"]);
+        }
+
+        return () => clearTimeout(timer);
+    }, [season]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setDeviceType(getDeviceType());
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        if (!headerRef.current || !seasonRef.current || !totalMembersRef.current) return;
+
+        const contexts = ScrollTrigger.getAll();
+        contexts.forEach(context => context.kill(true));
+
+        const animationConfig = {
             mobile: {
-                header: { start: "top 160%"},
-                season: { start: "top 160%"},
-                totalMembers: { start: "top 160%"},
-                link: { start: "top 170%"},
+                header: { start: "top 160%" },
+                season: { start: "top 160%" },
+                totalMembers: { start: "top 160%" },
+                link: { start: "top 170%" },
             },
             tablet: {
-                header: { start: "top 80%"},
-                season: { start: "top 80%"},
-                totalMembers: { start: "top 80%"},
-                link: { start: "top 85%"},
+                header: { start: "top 80%" },
+                season: { start: "top 80%" },
+                totalMembers: { start: "top 80%" },
+                link: { start: "top 85%" },
             },
             pc: {
-                header: { start: "top 80%"},
-                season: { start: "top 80%"},
-                totalMembers: { start: "top 80%"},
-                link: { start: "top 85%"},
+                header: { start: "top 100%" },
+                season: { start: "top 100%" },
+                totalMembers: { start: "top 100%" },
+                link: { start: "top 100%" },
             },
         };
- 
-         const config = animationConfig[deviceType];
-         gsap.fromTo(
-            headerRef.current,
-            { opacity: 0, y: -50 },
-            {
+
+        const config = animationConfig[deviceType] || animationConfig.pc;
+
+        ScrollTrigger.config({ markers: false });
+
+        gsap.set(headerRef.current, { opacity: 0, y: -50 });
+        gsap.to(headerRef.current, {
+            opacity: 1,
+            y: 0,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: headerRef.current,
+                start: config.header.start,
+                toggleActions: "play none none reverse",
+            },
+        });
+
+        if (seasonRef.current) {
+            gsap.set(seasonRef.current, { opacity: 0, y: -50 });
+            gsap.to(seasonRef.current, {
                 opacity: 1,
                 y: 0,
-                duration: 1,
-                ease: "power3.out",
+                duration: 0.8,
+                ease: "power2.out",
                 scrollTrigger: {
-                    trigger: headerRef.current,
-                    start: "top 80%",
+                    trigger: seasonRef.current,
+                    start: config.season.start,
                     toggleActions: "play none none reverse",
-                    
                 },
-            }
-        );
-        if(seasonRef)
-            gsap.fromTo(
-                seasonRef.current,
-                { opacity: 0, y: -50 },
-                {
+            });
+        }
+
+        if (totalMembersRef.current) {
+            gsap.set(totalMembersRef.current, { opacity: 0, scale: 0.8 });
+            gsap.to(totalMembersRef.current, {
+                opacity: 1,
+                scale: 1,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: totalMembersRef.current,
+                    start: config.totalMembers.start,
+                    toggleActions: "play none none reverse",
+                },
+            });
+        }
+
+        if (linkRefs.current.length > 0) {
+            const linkElements = linkRefs.current.filter(el => el !== null);
+
+            linkElements.forEach((el, index) => {
+                gsap.set(el, { opacity: 0, x: index % 2 === 0 ? -50 : 50 });
+                gsap.to(el, {
                     opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: "power3.out",
+                    x: 0,
+                    duration: 0.6,
+                    ease: "power2.out",
+                    delay: index * 0.1,
                     scrollTrigger: {
-                        trigger: seasonRef.current,
-                        start: "top 80%",
+                        trigger: el,
+                        start: config.link.start,
                         toggleActions: "play none none reverse",
                     },
-                }
-            );
-        if(totalMembersRef)
-        gsap.fromTo(
-             totalMembersRef.current,
-             { opacity: 0, scale: 0.8 },
-             {
-                 opacity: 1,
-                 scale: 1,
-                 duration: 1,
-                 ease: "power3.out",
-                 scrollTrigger: {
-                     trigger: totalMembersRef.current,
-                     start: "top 80%",
-                     toggleActions: "play none none reverse",
-                 },
-             }
-         );
-        if(linkRefs)
-            linkRefs.current.forEach((el, index) => {
-                gsap.fromTo(
-                    el,
-                    { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
-                    {
-                        opacity: 1,
-                        x: 0,
-                        duration: 1,
-                        ease: "power3.out",
-                        scrollTrigger: {
-                            trigger: el,
-                            start: "top 85%",
-                            toggleActions: "play none none reverse",
-                            
-                        },
-                    }
-                );
+                });
             });
-        }, [teams]);
+        }
 
-     const handleSeasonChange = (newSeason) => {
-         setSeason(newSeason);
-     };
+        return () => {
+            ScrollTrigger.getAll().forEach(st => st.kill());
+        };
+    }, [deviceType, teams]);
 
-     return (
-         <div className="text-align-center padding100-0" ref={sectionRef}>
-             <div className="display-flex flex-direction-column align-items-center gap-1r margin-bottom-60"
-                 ref={headerRef}>
-                 <h2 className="weight-700 color-white title">
-                     함께 할 수록 즐거운 성장
-                 </h2>
-                 <p className="weight-500 color-white subscription">
-                     즐거운 개발 여정을 디벨로퍼와 함께 해 보세요!
-                 </p>
-             </div>
+    const handleSeasonChange = (newSeason) => {
+        if (season !== newSeason) {
+            setSeason(newSeason);
+        }
+    };
 
-             <div className="season-selector" ref={seasonRef}>
-                 <h2
-                     className={`season ${season === "season2" ? "active" : ""}`}
-                     onClick={() => handleSeasonChange("season2")}
-                 >
-                     SEASON2
-                 </h2>
-                 <h2
-                     className={`season ${season === "season1" ? "active" : ""}`}
-                     onClick={() => handleSeasonChange("season1")}
-                 >
-                     SEASON1
-                 </h2>
-             </div>
+    return (
+        <div className="text-center py-20" ref={sectionRef}>
+            <div className="flex flex-col items-center gap-4 mb-12" ref={headerRef}>
+                <h2 className="text-2xl md:text-3xl weight-600 text-white content-center">
+                    함께 할 수록 즐거운 성장
+                </h2>
+                <p className="weight-500 text-white text-lg text-gray-300">
+                    즐거운 개발 여정을 디벨로퍼와 함께 해 보세요!
+                </p>
+            </div>
 
-             <div className="team-section3">
-                 {teams.map((team, index) => (
-                     <Link
-                         to={`/member?teamId=${team.teamId}`}
-                         key={index}
-                         className="member-card"
-                         ref={(el) => (linkRefs.current[index] = el)}
-                     >
-                         <span className="team-name1">{team.teamName}</span>
-                         <span className="team-members">{team.members.length}명</span>
-                     </Link>
-                 ))}
-             </div>
+            <div className="flex justify-center space-x-8 mb-12 mt-6" ref={seasonRef}>
+                <h2
+                    className={`text-xl md:text-2xl weight-600 cursor-pointer transition-colors duration-300 ${season === "season2" ? "text-purple-500" : "text-gray-400 hover:text-white"}`}
+                    onClick={() => handleSeasonChange("season2")}
+                >
+                    SEASON2
+                </h2>
+                <h2
+                    className={`text-xl md:text-2xl weight-600 cursor-pointer transition-colors duration-300 ${season === "season1" ? "text-purple-500" : "text-gray-400 hover:text-white"}`}
+                    onClick={() => handleSeasonChange("season1")}
+                >
+                    SEASON1
+                </h2>
+            </div>
 
-             <div
-                 className="margin-top-30 text-align-center"
-                 ref={totalMembersRef}
-             >
-                 <p className="font-size-24 weight-700 color-light-gray-third">누적 활동 인원</p>
-                 <h2 className="font-size-42 weight-700 color-white padding-bottom-20">총 {totalMembers}명</h2>
-                 <a href="/member" className="font-size-16 weight-500 color-gray">
-                     더 보러가기 &gt;
-                 </a>
-             </div>
-         </div>
-     );
- };
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto px-4">
+                {loading ? (
+                    Array.from({ length: 6 }).map((_, index) => (
+                        <Skeleton key={index} height={200} className="w-full" baseColor="#2D2D33" highlightColor="#3E3E46" />
+                    ))
+                ) : (
+                    teams.map((team, index) => (
+                        <Link
+                            to={`/member?teamId=${team.teamId}`}
+                            key={index}
+                            className="bg-[#1F1F23] p-8 rounded-xl shadow-md transition-all duration-300 flex flex-col items-center border border-gray-800 hover:border-purple-500 group relative overflow-hidden"
+                            ref={(el) => (linkRefs.current[index] = el)}
+                        >
+                            <div className="absolute bottom-0 left-0 w-full h-1 bg-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                            <span className="text-xl md:text-2xl weight-600 text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">{team.teamName}</span>
+                            <span className="text-sm weight-500 bg-[#2D2D33] px-4 py-1 rounded-full text-gray-300 group-hover:bg-purple-900 group-hover:text-purple-200 transition-all duration-300">{team.members.length}명</span>
+                        </Link>
+                    ))
+                )}
+            </div>
 
- export default Team;
+            <div className="mt-16 text-center" ref={totalMembersRef}>
+                <p className="text-xl weight-500 text-gray-400">누적 활동 인원</p>
+                <h2 className="text-4xl weight-600 text-white pb-5">총 {totalMembers}명</h2>
+                <a href="/member" className="text-base weight-500 text-gray-400 hover:text-purple-500 transition-colors duration-300">
+                    더 보러가기 &gt;
+                </a>
+            </div>
+        </div>
+    );
+};
 
+export default Team;

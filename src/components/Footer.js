@@ -3,14 +3,13 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <footer className="position-absolute bottom-0 width100">
-            <div className="display-flex-column gap-1r justify-center padding-70"
+        <footer className="absolute bottom-0 w-full">
+            <div className="flex flex-col items-center justify-center gap-2 py-6 px-4"
                  style={{background: "rgb(34 47 63)"}}>
-                <li>
-                    <p className="color-white frank-800 font-size-24 align-center">DEVELOPER</p>
-                </li>
-                <p className="text-align-center weight-400 font-size-14 color-white"
-                   style={{color: "#bdbdbd"}}>
+                <div>
+                    <p className="text-white md:text-xl frank-700 text-center">DEVELOPER</p>
+                </div>
+                <p className="text-center weight-400 text-xs md:text-sm text-[#bdbdbd]">
                     &copy; {new Date().getFullYear()} DEVELOPER. All rights reserved.</p>
             </div>
         </footer>

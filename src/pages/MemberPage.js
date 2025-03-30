@@ -95,8 +95,6 @@ const MemberPage = () => {
             }
         );
 
-
-
         // 팀 박스 애니메이션
         teamBoxRefs.current.forEach((box, index) => {
             gsap.fromTo(
@@ -136,42 +134,42 @@ const MemberPage = () => {
             }
         }
     }, [teams, location.search]);
-    
+
     return (
-        <div className="member-page" ref={pageRef}>
-            <div className="display-flex-column align-items-center position-relative z-index-100" ref={headerRef}>
-                <div className="text-align-center padding-top-85">
-                    <h1 className="weight-700 color-white member-title">MEMBER</h1>
-                    <p className="weight-500 color-white padding-top-20 member-discription">
-                        <span className="highlight-total">총 {totalMembers}명</span>의 팀원들이 디벨로퍼와 함께했어요!
+        <div className="relative pt-20 pb-40" ref={pageRef}>
+            <div className="flex flex-col items-center pb-8 relative z-10" ref={headerRef}>
+                <div className="text-center pt-20">
+                    <h1 className="text-2xl md:text-3xl weight-600 text-white content-center">MEMBER</h1>
+                    <p className="weight-500 text-white text-lg text-gray-300 pt-2">
+                        <span className="text-[#FFD873]">총 {totalMembers}명</span>의 팀원들이 디벨로퍼와 함께했어요!
                     </p>
                 </div>
 
-                <div className="filter-container padding-top-50 padding-bottom-20">
+                <div className="flex items-center gap-4 pt-10 pb-5">
                     <button
-                        className={`filter-button ${season === 'all' ? 'active' : ''}`}
+                        className={`px-4 py-2 rounded-lg ${season === 'all' ? 'bg-white text-black' : 'bg-transparent text-white border border-white'}`}
                         onClick={() => handleSeasonChange('all')}
                     >
                         ALL
                     </button>
-                    <div className="dropdown" ref={dropdownRef}>
+                    <div className="relative" ref={dropdownRef}>
                         <button
-                            className={`dropbtn ${season !== 'all' ? 'active' : ''}`}
+                            className={`px-4 py-2 rounded-lg flex items-center ${season !== 'all' ? 'bg-white text-black' : 'bg-transparent text-white border border-white'}`}
                             onClick={handleDropdownToggle}
                         >
                             {selectedSeason}
                         </button>
 
                         {isDropdownOpen && (
-                            <div className="dropdown-content is-visible">
+                            <div className="absolute top-full left-0 mt-2 w-full bg-[#1E1E1E] rounded-md shadow-lg overflow-hidden text-xs">
                                 <button
-                                    className={season === 'season2' ? 'selected' : ''}
+                                    className={`w-full text-center px-4 py-2 hover:bg-gray-700 ${season === 'season2' ? 'bg-gray-700' : ''} text-white`}
                                     onClick={() => handleSeasonChange('season2')}
                                 >
                                     SEASON 2
                                 </button>
                                 <button
-                                    className={season === 'season1' ? 'selected' : ''}
+                                    className={`w-full text-center px-4 py-2 hover:bg-gray-700 ${season === 'season1' ? 'bg-gray-700' : ''} text-white`}
                                     onClick={() => handleSeasonChange('season1')}
                                 >
                                     SEASON 1
@@ -182,52 +180,51 @@ const MemberPage = () => {
                 </div>
             </div>
 
-            <div className="team-section2">
+            <div className="container mx-auto px-4">
                 {teams.map((team, index) => (
                     <div
                         key={index}
-                        className="team-box"
+                        className="bg-[#121212] rounded-lg p-6 mb-8"
                         ref={(el) => (teamBoxRefs.current[index] = el)}
                         id={team.teamId}
                     >
-                        <div className="team-header">
-                            <h3 className="weight-600 teamName color-white">
-                                {team.teamName} <span
-                                className="weight-400 teamMembers color-light-gray-second">{team.members.length}명</span>
+                        <div className="flex justify-between items-center mb-6">
+                            <h3 className="font-semibold text-white text-xl">
+                                {team.teamName} <span className="font-normal text-gray-400 text-sm ml-2">{team.members.length}명</span>
                             </h3>
-                            <div className="season-badge">
+                            <div className="bg-[#292929] text-gray-300 text-xs px-3 py-1 rounded-lg">
                                 {memberData.season1.includes(team) ? 'season1' : 'season2'}
                             </div>
                         </div>
-                        <div className="team-members-row">
+                        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                             {team.members.map((member, i) => (
-                                <div key={i} className="team-member-card display-flex-column align-items-center justify-center">
-                                    <div className="display-flex-column width-138 height-137 radius50 bg-gray box-shadow justify-center align-items-center">
-                                        <img className="height-110"
+                                <div key={i} className="flex flex-col items-center">
+                                    <div className="flex flex-col items-center justify-center w-[138px] h-[137px] rounded-full bg-[#1E1E1E] shadow-md">
+                                        <img className="h-[110px] object-contain"
                                              src={`/images/thumbnails/${member.thumbnail}`}
                                              alt={`${member.memberName} thumbnail`}
                                         />
                                     </div>
-                                    <div className="member-info">
-                                        <span className="member-name">{member.memberName}</span>
+                                    <div className="mt-3 text-center">
+                                        <span className="text-white font-medium">{member.memberName}</span>
                                     </div>
-                                    <div className="member-roles">
-                                    {Array.isArray(member.memberRole) ? (
+                                    <div className="flex flex-wrap gap-1 justify-center mt-1">
+                                        {Array.isArray(member.memberRole) ? (
                                             member.memberRole.map((role, idx) => (
-                                                <span key={idx} className="member-role">{role}</span>
+                                                <span key={idx} className="bg-[#2A2A2A] text-gray-300 text-xs px-2 py-1 rounded">{role}</span>
                                             ))
                                         ) : (
-                                            <span className="member-role">{member.memberRole}</span>
+                                            <span className="bg-[#2A2A2A] text-gray-300 text-xs px-2 py-1 rounded">{member.memberRole}</span>
                                         )}
                                     </div>
-                                    <div className="member-links">
+                                    <div className="flex gap-3 mt-3">
                                         {member.githubUrl && (
-                                            <a href={member.githubUrl} target="_blank" rel="noopener noreferrer">
+                                            <a href={member.githubUrl} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                                                 <FaGithub size={24} />
                                             </a>
                                         )}
                                         {member.otherLink && (
-                                            <a href={member.otherLink} target="_blank" rel="noopener noreferrer">
+                                            <a href={member.otherLink} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">
                                                 <FaLink size={24} />
                                             </a>
                                         )}

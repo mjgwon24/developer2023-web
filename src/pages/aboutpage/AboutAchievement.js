@@ -85,57 +85,54 @@ function AboutAchievement() {
         });
     }, []);
 
+
     return (
-        <div className="padding100-0 display-flex-column align-items-center">
-            <div className="display-flex-column align-items-center padding-bottom-40">
-                <p className='our-archives'
-                   ref={(el) => textRefs.current.push(el)}>
+        <div className="py-[100px] flex flex-col items-center">
+            <div className="flex flex-col items-center pb-10">
+                <h2 className="text-center text-2xl md:text-3xl weight-600 text-white md:mb-10 mb-1"
+                    ref={(el) => textRefs.current.push(el)}>
                     우리가 이룬 업적들
-                </p>
+                </h2>
             </div>
 
-            <div className="display-flex-column align-items-center padding-bottom-60">
-                <div className="display-flex padding-20">
-                    <img src={hackertonImg2_2} style={{width: "500px"}}
+            <div className="flex flex-col items-center pb-15">
+                <div className="flex flex-col md:flex-row p-5">
+                    <img src={hackertonImg2_2} className="w-[500px] rounded-xl p-5"
                          alt="2024 경주 지역문제해결 해커톤 최우수상"
-                         className="radius-12 padding-20"
                          ref={(el) => textRefs.current.push(el)}/>
-                    <img src={hackertonImg2_2} style={{width: "500px"}}
-                            alt="2024 경주 지역문제해결 해커톤 최우수상"
-                         className="radius-12 padding-20"
+                    <img src={hackertonImg2_2} className="w-[500px] rounded-xl p-5"
+                         alt="2024 경주 지역문제해결 해커톤 최우수상"
                          ref={(el) => textRefs.current.push(el)}/>
                 </div>
 
-                <p className="prize-title"
+                <p className="text-2xl weight-600 text-white mb-2"
                    ref={(el) => textRefs.current.push(el)}
                 >
                     2024 경주 지역문제해결 해커톤 최우수상
                 </p>
-                <p className="prize-member"
+                <p className="text-lg text-gray-300 mb-10"
                    ref={(el) => textRefs.current.push(el)}
                 >
                     권민지, 김이현, 전상은, 전형주
                 </p>
             </div>
 
-            <div className="display-flex-column align-items-center">
-                <div className="display-flex padding-20">
-                    <img src={hackertonImg1_1} style={{width: "500px"}}
+            <div className="flex flex-col items-center">
+                <div className="flex flex-col md:flex-row p-5">
+                    <img src={hackertonImg1_1} className="w-[500px] rounded-xl p-5"
                          alt="2024 Hackers Ground 해커톤 최우수상"
-                         className="radius-12 padding-20"
                          ref={(el) => textRefs.current.push(el)}/>
-                    <img src={hackertonImg1_2} style={{width: "500px"}}
+                    <img src={hackertonImg1_2} className="w-[500px] rounded-xl p-5"
                          alt="2024 Hackers Ground 해커톤 최우수상"
-                         className="radius-12 padding-20"
                          ref={(el) => textRefs.current.push(el)}/>
                 </div>
 
-                <p className="prize-title"
+                <p className="text-2xl weight-600 text-white mb-2"
                    ref={(el) => textRefs.current.push(el)}
                 >
                     2024 Hackers Ground 해커톤 최우수상
                 </p>
-                <p className="prize-member"
+                <p className="text-lg text-gray-300"
                    ref={(el) => textRefs.current.push(el)}>
                     김동민, 김현나
                 </p>

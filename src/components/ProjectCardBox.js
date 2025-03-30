@@ -1,43 +1,48 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-
-/**
- * 프로젝트 상세 페이지
- * @since 2024.09.22
- * @lastmodified 2024.11.09
- */
-
-const ProjectCardBox = ({ project, type, moveEvent,moveEventReverse,index }) => {
+const ProjectCardBox = ({ project, type, moveEvent, moveEventReverse, index }) => {
     const navigate = useNavigate();
-    const [isHovered, setIsHovered] = useState(false); // 마우스 오버 상태 추가
+    const [isHovered, setIsHovered] = useState(false);
 
     const handleCardClick = () => {
         navigate(`/project/detail/${project.projectId}`);
     };
 
-
     return (
         <div
-            className={`radius-8 ${type}-project-card ${index!=undefined?`box${index}`:""} ${moveEvent?`effect${index}`:""} ${moveEventReverse?`effectReverse${index}`:""}`}
+            className={`rounded-lg overflow-hidden shadow-md transition-all duration-300
+${type}-project-card ${index !== undefined ? `box${index}` : ""}
+${moveEvent ? `effect${index}` : ""} ${moveEventReverse ? `effectReverse${index}` : ""}
+cursor-pointer ${isHovered ? 'transform scale-105' : ''} bg-white dark:bg-gray-50/5`}
             onClick={handleCardClick}
-            onMouseEnter={() => setIsHovered(true)} // 마우스 오버 시 상태 변경
-            onMouseLeave={() => setIsHovered(false)} // 마우스 아웃 시 상태 변경
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
         >
-            <div className="flex flex-col gap-0" style={{display:"flex",flexDirection:"column"}}>
-                <img className={`width100 ${type}-project-card-image`} src={project.imageUrl} alt={project.title}/>
-                <div className={`flex-direction-column gap-5p ${type}-cardBackground`}>
-                    <div className="display-flex justify-between padding-bottom-2">
-                        <h3 className={`${type}-project-card-title`}>{project.title}</h3>
-                        <span className={`season-label ${type}-project-card-season`}>{project.season}</span>
+            <div className="flex flex-col h-full">
+                <div className="relative overflow-hidden h-[170px]">
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-10"></div>
+                    <img
+                        className={`w-full h-full object-cover ${type}-project-card-image hover:scale-110 transition-transform duration-500`}
+                        src={project.imageUrl}
+                        alt={project.title}
+                    />
+                    <div className="absolute top-0 right-0 bg-purple-700 text-white px-2 py-0.5 text-xs m-2 rounded shadow-sm bg-opacity-70 weight-400 z-20">
+                        {project.season}
                     </div>
-
-                    <div className={`display-flex-end gap-5p ${type}-project-card-team`}>
-                        <p className="weight-400 color-gray">{project.team} |</p>
-                        <p className="text-align-start weight-400 color-gray">{project.members}</p>
+                </div>
+                <div className={`flex flex-col items-start flex-grow ${type}-cardBackground p-4 pb-7`}>
+                    <h2 className={`${type}-project-card-title weight-600 text-gray-800 dark:text-gray-100 truncate text-base mb-0.5`}>
+                        {project.title}
+                    </h2>
+                    <div className="flex items-center text-xs text-gray-500 dark:text-gray-400 mb-3">
+                        <span className="weight-400">{project.team}</span>
+                        <span className="mx-1.5 text-gray-300 dark:text-gray-600">|</span>
+                        <span className="truncate text-gray-400 dark:text-gray-500">{project.members}</span>
                     </div>
-
-                    <p className={`text-align-start margin-top-10 weight-400 ${type}-project-card-description`}>{project.description}{project.description}</p>
+                    <p className={`text-gray-600 dark:text-gray-300 text-xs line-clamp-3 ${type}-project-card-description`}>
+                        {project.description}
+                    </p>
                 </div>
             </div>
         </div>
