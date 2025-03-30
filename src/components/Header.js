@@ -77,7 +77,7 @@ const Header = ({ style = { background: "rgb(0 0 0)" }, onJoinClick }) => {
                 <div className="flex items-center justify-between relative">
                     <a
                         href="/"
-                        className="text-2xl md:text-3xl frank-800 font-bold text-white transition-colors"
+                        className="md:text-xl frank-800 font-bold text-white transition-colors"
                     >
                         DEVELOPER
                     </a>
