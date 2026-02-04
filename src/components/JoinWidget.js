@@ -48,10 +48,10 @@ const JoinWidget = ({ onClose }) => {
 
                         <div className="flex flex-col items-center gap-6">
                             <div className="text-xl weight-600">
-                                <p>010-5109-0625</p>
+                                <p>010-8271-3102</p>
                             </div>
                             <a
-                                href="https://open.kakao.com/o/spWt0I8g"
+                                href="https://open.kakao.com/o/spbhAOei"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 px-4 py-2 bg-yellow-300 rounded-lg weight-500"
