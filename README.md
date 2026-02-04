@@ -89,10 +89,6 @@ IT 개발 동아리 **디벨로퍼(Developer)** 웹사이트 제작을 위한 �
 ### [ ABOUT ]
 디벨로퍼 동아리에 대해 소개합니다.
 
-![스크린샷 2024-12-19 05 57 37](https://github.com/user-attachments/assets/f203d4eb-b432-4048-ad20-71c14a595e13)
-![스크린샷 2024-12-19 05 58 25](https://github.com/user-attachments/assets/7ec21397-f6d6-494f-a1eb-d0ab77180253)
-![스크린샷 2024-12-19 05 58 45](https://github.com/user-attachments/assets/705b4632-8212-4f45-919d-06d8c96ca783)
-
 <br/>
 
 ### [ MEMBER ]

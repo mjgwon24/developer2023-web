@@ -46,10 +46,10 @@ const ContactWidget = () => {
                         <p className="mb-4">문의사항이 있으실 경우 아래로 연락 주세요!</p>
                         <div className="flex items-center mb-4 bg-purple-50 p-3 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 border border-purple-200">
                             <FontAwesomeIcon icon={faPhoneAlt} className="text-purple-700 mr-3 text-lg" />
-                            <span className="text-gray-700 font-medium">010-5109-0625</span>
+                            <span className="text-gray-700 font-medium">010-8271-3102</span>
                         </div>
                         <a
-                            href="https://open.kakao.com/o/spWt0I8g"
+                            href="https://open.kakao.com/o/spbhAOei"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="cursor-pointer flex items-center justify-center px-4 py-3 bg-yellow-300 hover:bg-yellow-400 rounded-lg mb-4 shadow-md transition-all duration-300 border border-yellow-400 group"
